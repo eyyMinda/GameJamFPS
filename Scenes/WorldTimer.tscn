@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6yothtw78j7y"]
+
+[ext_resource type="Script" path="res://Scripts/Timer.gd" id="1_tvuab"]
+[ext_resource type="FontFile" uid="uid://00ir0spa6b0d" path="res://Assets/Pixeled.ttf" id="2_6m0wk"]
+[ext_resource type="AudioStream" uid="uid://dh67f8wajucx6" path="res://Audio/Misc/clock-tick.wav" id="2_jblps"]
+
+[node name="WorldTimer" type="Node3D"]
+
+[node name="Timer" type="Timer" parent="." groups=["Timer"]]
+autostart = true
+script = ExtResource("1_tvuab")
+tick_sound = ExtResource("2_jblps")
+
+[node name="TimerLabel" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -81.0
+offset_top = -6.0
+offset_right = 15.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0, 0.839216, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_6m0wk")
+theme_override_font_sizes/font_size = 15
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

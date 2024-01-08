@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cbopjsmqdwc81"
+path="res://.godot/imported/64 Damage Sound Effect.wav-a64e83d24d9c15ff59c57f9dc9fa41f3.sample"
+
+[deps]
+
+source_file="res://Audio/64 Damage Sound Effect.wav"
+dest_files=["res://.godot/imported/64 Damage Sound Effect.wav-a64e83d24d9c15ff59c57f9dc9fa41f3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,14 @@
+Node3D
+CollisionShape3D
+Area3D
+BoneAttachment3D
+CharacterBody3D
+AudioStreamPlayer3D
+Marker3D
+Timer
+GPUParticles3D
+RayCast3D
+MeshInstance3D
+AnimationPlayer
+StaticBody3D
+AudioStreamPlayer

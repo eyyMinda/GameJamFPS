@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://pfsore70g0dk"]
+
+[resource]
+emission_enabled = true
+emission = Color(0.223529, 0.552941, 1, 1)
+emission_energy_multiplier = 300.0

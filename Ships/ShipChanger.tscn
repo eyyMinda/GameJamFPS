@@ -1,0 +1,15 @@
+[gd_scene load_steps=7 format=3 uid="uid://pqaqso0g0r4c"]
+
+[ext_resource type="Script" path="res://Ships/ShipChanger.gd" id="1_3fxh1"]
+[ext_resource type="PackedScene" uid="uid://bi6gvswnpp0xq" path="res://Art/MainShip.fbx" id="1_grrna"]
+[ext_resource type="PackedScene" uid="uid://ffo3dfvjghb8" path="res://Art/LeftShip1.fbx" id="2_3728w"]
+[ext_resource type="PackedScene" uid="uid://dfh4uk3yhhlr7" path="res://Art/LeftShip2.fbx" id="3_pe2fd"]
+[ext_resource type="PackedScene" uid="uid://bywjorri40f8n" path="res://Art/LeftShip3.fbx" id="4_c7fnk"]
+[ext_resource type="PackedScene" uid="uid://dlkdqqumf7i3d" path="res://Art/LeftShip4.fbx" id="5_5my48"]
+
+[node name="ShipChanger" type="Node3D" groups=["DockedModel"]]
+script = ExtResource("1_3fxh1")
+PossibleShipModels = Array[PackedScene]([ExtResource("2_3728w"), ExtResource("3_pe2fd"), ExtResource("4_c7fnk"), ExtResource("5_5my48")])
+
+[node name="MainShip" parent="." instance=ExtResource("1_grrna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00661945, 0, -0.00784767)

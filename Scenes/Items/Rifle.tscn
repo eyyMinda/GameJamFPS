@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://ce0ch5vrqo2t8"]
+
+[ext_resource type="Script" path="res://Scripts/Guns/Rifle.gd" id="1_5p177"]
+[ext_resource type="PackedScene" uid="uid://dchqbxjuanoif" path="res://Art/Weapon.fbx" id="2_gd1qa"]
+[ext_resource type="PackedScene" uid="uid://b8msh684y0s0" path="res://Scenes/Other/Bullet.tscn" id="3_jyuts"]
+[ext_resource type="AudioStream" uid="uid://bikstu5jbt7lo" path="res://Audio/Shoot.wav" id="3_mj6pj"]
+
+[sub_resource type="Animation" id="Animation_u1d1w"]
+resource_name = "Shoot"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WeaponMesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.02, 0.08), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WeaponMesh:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.2),
+"transitions": PackedFloat32Array(1, 0.170755, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0872665, 0, -0.174533), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f5oij"]
+_data = {
+"Shoot": SubResource("Animation_u1d1w")
+}
+
+[node name="Rifle" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+script = ExtResource("1_5p177")
+gun_sound = ExtResource("3_mj6pj")
+bullet = ExtResource("3_jyuts")
+
+[node name="WeaponMesh" parent="." instance=ExtResource("2_gd1qa")]
+transform = Transform3D(0.996195, 0.0871558, 0, -0.0870728, 0.995247, -0.0436194, -0.00380168, 0.0434534, 0.999048, 0, -0.01, 0.04)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_f5oij")
+}
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.043557, -0.379042)
+target_position = Vector3(0, 0, -1)

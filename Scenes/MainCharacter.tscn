@@ -1,0 +1,86 @@
+[gd_scene load_steps=16 format=3 uid="uid://c7e6gpourd3rk"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_1a1a3"]
+[ext_resource type="PackedScene" uid="uid://ce0ch5vrqo2t8" path="res://Scenes/Items/Rifle.tscn" id="2_o4mdi"]
+[ext_resource type="Script" path="res://Scripts/interactRay.gd" id="3_p85ax"]
+[ext_resource type="Script" path="res://Scripts/HitscanShoot.gd" id="4_n7d3a"]
+[ext_resource type="Script" path="res://Scripts/Footstep_manager.gd" id="5_37s7p"]
+[ext_resource type="PackedScene" uid="uid://grhh6pnjmg8k" path="res://Scenes/PlayerHUD.tscn" id="5_olrth"]
+[ext_resource type="AudioStream" uid="uid://co4uj6skac0dv" path="res://Audio/Player/Jump.wav" id="5_u3tyq"]
+[ext_resource type="AudioStream" uid="uid://b7v3grgamnowi" path="res://Audio/Player/footsteps/footstep-1.wav" id="6_admj1"]
+[ext_resource type="AudioStream" uid="uid://drf4wbvbdiv3u" path="res://Audio/Player/footsteps/footstep-2.wav" id="7_r5ic3"]
+[ext_resource type="AudioStream" uid="uid://bqx4tqywwbbgj" path="res://Audio/Player/footsteps/footstep-3.wav" id="8_i6y1v"]
+[ext_resource type="Script" path="res://Scripts/CheckIfHome.gd" id="8_pjcl3"]
+[ext_resource type="AudioStream" uid="uid://vcmpcskehw5w" path="res://Audio/Player/footsteps/footstep-4.wav" id="9_b1f6d"]
+[ext_resource type="AudioStream" uid="uid://dx8qdl6c0r056" path="res://Audio/Player/footsteps/footstep-5.wav" id="10_h0hqw"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ipunq"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c7mc5"]
+points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607, 0.498884, 0.169713, 0.559144, 0.464172, 0.231051, -0.803591, 0.320455, 0.40741, 0.651043, -0.243523, -0.482789, 0.594843, 0.0822132, -0.362868, -0.682312, 0.289697, 0.469044, -0.654529, -0.0662713, -0.127444, 0.842701, -0.338103, -0.393435, -0.683942, -0.244717, 0.438255, 0.623309, 0.200849, 0.0841477, 0.977454, 0.114795, -0.0682023, -0.976458, -0.12927, 0.20055, -0.563129, -0.451454, -0.185527, 0.595453, -0.453475, -0.273363, 0.592268, 0.407754, -0.00693649, -0.476823, 0.49966, 0.375821, -0.588614, 0.316955, 0.111579, 0.563059, -0.481177, -0.41725, 0.527866, -0.270497, -0.484546, -0.596972, -0.0665097, -0.279747, 0.908561, 0.0533361, -0.250197, -0.880712, 0.205319, 0.263647, -0.902771, -0.127394, 0.293368, 0.871526, -0.157196, 0.373412, -0.526319, -0.328246, 0.499663, 0.476641, -0.00688856, 0.0531056, 0.875001, 0.324703, -0.154543, -0.590854, 0.465879, -0.0972799, -0.782358, -0.398188, -0.387649, -0.498171, 0.31565, -0.30068, -0.587995, -0.388901)
+
+[node name="MainCharacter" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." groups=["Player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_1a1a3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_ipunq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("ConvexPolygonShape3D_c7mc5")
+
+[node name="NeckPivot" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0.64, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/NeckPivot"]
+fov = 90.0
+
+[node name="Rifle" parent="CharacterBody3D/NeckPivot/Camera3D" instance=ExtResource("2_o4mdi")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233547, -0.0952243, -0.230671)
+
+[node name="InteractRay" type="RayCast3D" parent="CharacterBody3D/NeckPivot/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000392418, -0.00461447, 0.153047)
+target_position = Vector3(0, 0, -4)
+script = ExtResource("3_p85ax")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CharacterBody3D/NeckPivot/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.429244)
+light_color = Color(0.976471, 0.976471, 0.792157, 1)
+light_energy = 16.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 2.0
+light_specular = 0.0
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+spot_range = 15.0
+spot_attenuation = 0.466517
+
+[node name="AimCast" type="RayCast3D" parent="CharacterBody3D/NeckPivot/Camera3D"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 0, -0.676587)
+target_position = Vector3(0, -500, 0)
+collision_mask = 65534
+hit_from_inside = true
+collide_with_areas = true
+script = ExtResource("4_n7d3a")
+
+[node name="GroundPosition" type="Marker3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Footstep_manager" type="Node3D" parent="CharacterBody3D" node_paths=PackedStringArray("ground_pos")]
+script = ExtResource("5_37s7p")
+footstep_sounds = Array[AudioStreamWAV]([ExtResource("6_admj1"), ExtResource("7_r5ic3"), ExtResource("8_i6y1v"), ExtResource("9_b1f6d"), ExtResource("10_h0hqw")])
+jump_sound = ExtResource("5_u3tyq")
+ground_pos = NodePath("../GroundPosition")
+
+[node name="PlayerHud" parent="." instance=ExtResource("5_olrth")]
+
+[node name="CheckifHome" type="Node" parent="."]
+script = ExtResource("8_pjcl3")
+
+[connection signal="raycast_hit" from="CharacterBody3D/NeckPivot/Camera3D/InteractRay" to="PlayerHud" method="_on_interact_ray_raycast_hit"]
+[connection signal="start_shooting" from="CharacterBody3D/NeckPivot/Camera3D/AimCast" to="CharacterBody3D/NeckPivot/Camera3D/Rifle" method="start_shooting"]
+
+[editable path="CharacterBody3D/NeckPivot/Camera3D/Rifle"]

@@ -1,0 +1,144 @@
+[gd_scene load_steps=17 format=3 uid="uid://jnvjnkoo5f3i"]
+
+[ext_resource type="PackedScene" uid="uid://pqaqso0g0r4c" path="res://Ships/ShipChanger.tscn" id="1_6s6e0"]
+[ext_resource type="Shader" path="res://Shaders/Retro.gdshader" id="1_g65iw"]
+[ext_resource type="PackedScene" uid="uid://c7e6gpourd3rk" path="res://Scenes/MainCharacter.tscn" id="2_74eqd"]
+[ext_resource type="AudioStream" uid="uid://cxj5u6tg7cpcr" path="res://Audio/Music/creepy music 3.wav" id="3_nxix7"]
+[ext_resource type="Script" path="res://Scripts/NavMeshUpdate.gd" id="6_h0oym"]
+[ext_resource type="PackedScene" uid="uid://dcqet8dydslqq" path="res://Scenes/Door.tscn" id="7_2redl"]
+[ext_resource type="PackedScene" uid="uid://bxuduxsik8n88" path="res://Scenes/Entities/Enemy.tscn" id="7_lufdt"]
+[ext_resource type="PackedScene" uid="uid://1wkmvuasmfa8" path="res://Scenes/GameManager.tscn" id="7_wuo8q"]
+[ext_resource type="PackedScene" uid="uid://c8khpbnsk7sc5" path="res://Scenes/NPCCharacter.tscn" id="9_auwdl"]
+[ext_resource type="PackedScene" uid="uid://dc52chkmcmec0" path="res://Scenes/Audio_manager.tscn" id="10_5nbrt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_spqti"]
+shader = ExtResource("1_g65iw")
+shader_parameter/change_color_depth = true
+shader_parameter/target_color_depth = 5
+shader_parameter/dithering = true
+shader_parameter/scale_resolution = false
+shader_parameter/target_resolution_scale = 1
+shader_parameter/enable_recolor = false
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_88qsy"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_wa5pc"]
+sky_material = SubResource("ProceduralSkyMaterial_88qsy")
+
+[sub_resource type="Environment" id="Environment_8rnsf"]
+background_mode = 1
+sky = SubResource("Sky_wa5pc")
+ambient_light_color = Color(0.0470588, 0.0470588, 0.0470588, 1)
+ambient_light_energy = 0.01
+tonemap_mode = 2
+tonemap_exposure = 0.75
+tonemap_white = 16.0
+ssr_enabled = true
+ssr_max_steps = 256
+ssr_fade_in = 3.3941
+ssr_fade_out = 0.203063
+ssr_depth_tolerance = 0.11
+ssao_enabled = true
+ssao_radius = 3.37
+ssao_intensity = 2.89
+ssao_detail = 5.0
+ssao_horizon = 0.33
+ssao_sharpness = 1.0
+ssil_enabled = true
+ssil_radius = 0.66
+ssil_intensity = 30.0
+sdfgi_use_occlusion = true
+sdfgi_energy = 2.0
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 2.0
+glow_strength = 0.5
+glow_bloom = 0.1
+glow_hdr_threshold = 1.14
+glow_hdr_scale = 1.79
+glow_hdr_luminance_cap = 53.1
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_light_energy = 0.1
+fog_density = 0.3
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.04
+volumetric_fog_albedo = Color(0.188235, 0.188235, 0.188235, 1)
+volumetric_fog_emission_energy = 0.25
+volumetric_fog_anisotropy = 0.6
+volumetric_fog_temporal_reprojection_enabled = false
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_dsncc"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_72lkx"]
+vertices = PackedVector3Array(-0.506619, 0.481232, 12.8316, 0.493381, 0.481232, 12.8316, 0.493381, 0.481232, 11.8316, -0.756619, 0.481232, 11.5816, -1.25662, 0.481232, -5.16838, -4.75662, 0.481232, -7.41838, -5.50662, 0.481232, -7.41838, -5.50662, 0.481232, -1.66838, -5.00662, 0.481232, 1.58162, -0.756619, 0.481232, -4.66838, -3.25662, 0.481232, -7.91838, -4.25662, 0.481232, -8.16838, -4.75662, 0.481232, -7.41838, -1.25662, 0.481232, -5.16838, 1.99338, 0.481232, 9.08162, 3.24338, 0.481232, 8.58162, 3.49338, 0.481232, 7.58162, -1.75662, 0.481232, -9.66838, -3.00662, 0.481232, -9.16838, -3.25662, 0.481232, -7.91838, -1.25662, 0.481232, -5.16838, 0.493381, 0.481232, 11.8316, 2.24338, 0.481232, 10.3316, 1.99338, 0.481232, 9.08162, -0.756619, 0.481232, 11.5816, 4.74338, 0.481232, 7.58162, 4.99338, 0.481232, -0.918382, 3.49338, 0.481232, -0.918382, 3.49338, 0.481232, 7.58162, 3.49338, 0.481232, -0.918382, 1.74338, 0.481232, -4.66838, -0.756619, 0.481232, -4.66838, -5.50662, 0.481232, -1.66838, -8.00662, 0.481232, -1.41838, -8.00662, 0.481232, 1.33162, -5.00662, 0.481232, 1.58162, -0.756619, 0.481232, 11.5816, 1.99338, 0.481232, 9.08162, 3.49338, 0.481232, 7.58162, 3.49338, 0.481232, -0.918382, -0.756619, 0.481232, -4.66838, -5.00662, 0.481232, 1.58162, -5.00662, 0.481232, 11.5816, -0.756619, 0.481232, 11.5816, 3.49338, 0.481232, 7.58162, -0.256619, 0.481232, -7.66838, -0.256619, 0.481232, -6.66838, 4.49338, 0.481232, -6.66838, 4.49338, 0.481232, -7.66838, 6.74338, 0.481232, -1.41838, 6.74338, 0.481232, 1.33162, 7.99338, 0.481232, 1.33162, 7.99338, 0.481232, -1.41838, 4.24338, 0.481232, 11.0816, 4.24338, 0.481232, 11.5816, 4.99338, 0.481232, 11.5816, 4.99338, 0.481232, 10.0816, -3.50662, 0.481232, 21.5816, -5.00662, 0.481232, 21.3316, -5.00662, 0.481232, 22.0816, -0.256619, 0.481232, 22.3316, 0.243381, 0.481232, 21.3316, 1.49338, 0.481232, 21.5816, 1.99338, 0.481232, 20.8316, 0.493381, 0.481232, 12.8316, -0.506619, 0.481232, 12.8316, -0.756619, 0.481232, 14.3316, 0.743381, 0.481232, 14.3316, 2.99338, 0.481232, 17.5816, 3.74338, 0.481232, 16.3316, 0.743381, 0.481232, 14.3316, 3.74338, 0.481232, 16.3316, 4.99338, 0.481232, 16.3316, 4.99338, 0.481232, 14.3316, 0.743381, 0.481232, 14.3316, -5.00662, 0.481232, 14.3316, -5.00662, 0.481232, 16.5816, -3.50662, 0.481232, 16.3316, -5.00662, 0.481232, 14.3316, -3.50662, 0.481232, 16.3316, -3.00662, 0.481232, 16.8316, -0.756619, 0.481232, 14.3316, 1.99338, 0.481232, 20.8316, 3.24338, 0.481232, 20.8316, 2.99338, 0.481232, 17.5816, -3.00662, 0.481232, 20.8316, -3.50662, 0.481232, 21.5816, -0.256619, 0.481232, 22.3316, 0.243381, 0.481232, 21.3316, 0.743381, 0.481232, 14.3316, -0.756619, 0.481232, 14.3316, -3.00662, 0.481232, 16.8316, 0.243381, 0.481232, 21.3316, 1.99338, 0.481232, 20.8316, 2.99338, 0.481232, 17.5816, 0.743381, 0.481232, 14.3316, -3.00662, 0.481232, 16.8316, -3.00662, 0.481232, 20.8316, -4.50662, 1.73123, 18.0816, -4.50662, 1.73123, 19.5816, -4.00662, 1.73123, 20.3316, -4.00662, 1.73123, 17.3316, 3.99338, 1.73123, 18.0816, 3.99338, 1.73123, 19.8316, 4.49338, 1.73123, 20.3316, 4.49338, 1.73123, 17.3316, 4.24338, 0.481232, 23.0816, 4.99338, 0.481232, 23.3316, 4.99338, 0.481232, 22.5816)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 9), PackedInt32Array(6, 9, 7), PackedInt32Array(7, 9, 8), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 13), PackedInt32Array(16, 15, 14), PackedInt32Array(18, 17, 19), PackedInt32Array(19, 17, 20), PackedInt32Array(22, 21, 23), PackedInt32Array(23, 21, 24), PackedInt32Array(28, 27, 25), PackedInt32Array(25, 27, 26), PackedInt32Array(29, 31, 30), PackedInt32Array(33, 32, 34), PackedInt32Array(34, 32, 35), PackedInt32Array(38, 37, 36), PackedInt32Array(43, 42, 44), PackedInt32Array(44, 42, 41), PackedInt32Array(44, 41, 39), PackedInt32Array(39, 41, 40), PackedInt32Array(48, 47, 45), PackedInt32Array(45, 47, 46), PackedInt32Array(52, 51, 49), PackedInt32Array(49, 51, 50), PackedInt32Array(54, 53, 55), PackedInt32Array(55, 53, 56), PackedInt32Array(58, 57, 59), PackedInt32Array(59, 57, 60), PackedInt32Array(63, 62, 61), PackedInt32Array(64, 67, 65), PackedInt32Array(65, 67, 66), PackedInt32Array(70, 69, 68), PackedInt32Array(72, 71, 73), PackedInt32Array(73, 71, 74), PackedInt32Array(77, 76, 75), PackedInt32Array(79, 78, 80), PackedInt32Array(80, 78, 81), PackedInt32Array(84, 83, 82), PackedInt32Array(86, 85, 87), PackedInt32Array(87, 85, 88), PackedInt32Array(91, 90, 89), PackedInt32Array(93, 92, 94), PackedInt32Array(94, 92, 97), PackedInt32Array(94, 97, 96), PackedInt32Array(94, 96, 95), PackedInt32Array(98, 101, 99), PackedInt32Array(99, 101, 100), PackedInt32Array(103, 102, 104), PackedInt32Array(104, 102, 105), PackedInt32Array(108, 107, 106)]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_spqti")
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+size = Vector2i(320, 180)
+render_target_update_mode = 4
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_energy = 0.05
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_8rnsf")
+camera_attributes = SubResource("CameraAttributesPractical_dsncc")
+
+[node name="MainCharacter" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_74eqd")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.32349, 6.95472)
+light_color = Color(0, 0.701961, 0.988235, 1)
+light_energy = 50.0
+light_volumetric_fog_energy = 4.0
+light_size = 1.0
+shadow_enabled = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2704, 0.0699339)
+light_color = Color(0, 0.701961, 0.988235, 1)
+light_energy = 50.0
+light_volumetric_fog_energy = 4.0
+light_size = 1.0
+shadow_enabled = true
+
+[node name="Music" type="AudioStreamPlayer" parent="SubViewportContainer/SubViewport"]
+stream = ExtResource("3_nxix7")
+volume_db = -9.608
+autoplay = true
+
+[node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("7_2redl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29687, -2.14619e-07, 0.0169591)
+
+[node name="GameManager" parent="SubViewportContainer/SubViewport" instance=ExtResource("7_wuo8q")]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/SubViewport" groups=["Nav"]]
+navigation_mesh = SubResource("NavigationMesh_72lkx")
+script = ExtResource("6_h0oym")
+Enemy = ExtResource("7_lufdt")
+
+[node name="ShipChanger" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("1_6s6e0")]
+
+[node name="NpcCharacter" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_auwdl")]
+transform = Transform3D(81.443, 0, -182.666, 0, 200, 0, 182.666, 0, 81.443, 3.74961, 0.0958253, 0)
+
+[node name="NpcCharacter2" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_auwdl")]
+transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 0.714769, 0, -4.79435)
+
+[node name="AudioManager" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_5nbrt")]
