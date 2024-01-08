@@ -1,10 +1,17 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1704745095
+::res://::1704745139
 icon.svg::CompressedTexture2D::4838405133221566364::1704121756::1704745095::1::::<><>::
 README.md::TextFile::-1::1704744991::0::1::::<><>::
 wakatime_logo.jpg::CompressedTexture2D::5576373333580567084::1704225390::1704745095::1::::<><>::
 World.tscn::PackedScene::659828331445894884::1704583369::0::1::::<><>::uid://pqaqso0g0r4c::::res://Ships/ShipChanger.tscn<>res://Shaders/Retro.gdshader<>uid://c7e6gpourd3rk::::res://Scenes/MainCharacter.tscn<>uid://cxj5u6tg7cpcr::::res://Audio/Music/creepy music 3.wav<>res://Scripts/NavMeshUpdate.gd<>uid://dcqet8dydslqq::::res://Scenes/Door.tscn<>uid://bxuduxsik8n88::::res://Scenes/Entities/Enemy.tscn<>uid://1wkmvuasmfa8::::res://Scenes/GameManager.tscn<>uid://c8khpbnsk7sc5::::res://Scenes/NPCCharacter.tscn<>uid://dc52chkmcmec0::::res://Scenes/Audio_manager.tscn
-::res://addons/::1704745080
+::res://addons/::1704745879
+::res://addons/godot-git-plugin/::1704745879
+git_plugin.gdextension::GDExtension::-1::1704745879::0::1::::<><>::
+plugin.cfg::TextFile::-1::1704745879::0::1::::<><>::
+THIRDPARTY.md::TextFile::-1::1704745879::0::1::::<><>::
+::res://addons/godot-git-plugin/linux/::1704745879
+::res://addons/godot-git-plugin/macos/::1704745879
+::res://addons/godot-git-plugin/win64/::1704746020
 ::res://addons/wakatime/::1704745080
 api_key_prompt.tscn::PackedScene::7230738953370575059::1704225390::0::1::::<><>::
 heartbeat.gd::GDScript::-1::1704225390::0::1::::<>RefCounted<>::
@@ -49,6 +56,8 @@ footstep-2.wav::AudioStreamWAV::8364594446966314736::1704476435::1704476436::1::
 footstep-3.wav::AudioStreamWAV::3558718471597342209::1704476435::1704476436::1::::<><>::
 footstep-4.wav::AudioStreamWAV::1478849996041751586::1704476435::1704476436::1::::<><>::
 footstep-5.wav::AudioStreamWAV::8842707375674764567::1704476435::1704476436::1::::<><>::
+::res://Docs/::1704745139
+PGD Game Design Document.md::TextFile::-1::1704143949::0::1::::<><>::
 ::res://Prefabs/::1704583933
 ::res://Scenes/::1704745080
 Audio_manager.tscn::PackedScene::7363214385029534829::1704569362::0::1::::<><>::res://Scripts/Audio_manager.gd
