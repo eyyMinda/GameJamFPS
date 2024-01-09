@@ -1,11 +1,9 @@
-res://Scenes/Entities/Enemy.tscn
 res://World.tscn
 res://Scenes/WorldTimer.tscn
 res://Scenes/MainCharacter.tscn
 res://Scenes/Items/Rifle.tscn
 res://Scenes/Other/Bullet.tscn
+res://Scenes/Entities/Enemy.tscn
 res://Scenes/NPCCharacter.tscn
 res://Scenes/Door.tscn
 res://Scenes/Audio_manager.tscn
-res://Scripts/Enemy.gd
-res://Scripts/HealthDeath.gd

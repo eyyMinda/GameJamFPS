@@ -1,4 +1,0 @@
-extends RandomShipName
-
-func _ready():
-	print(getShipName())
