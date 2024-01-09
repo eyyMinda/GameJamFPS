@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cxj5u6tg7cpcr"
-path="res://.godot/imported/creepy music 3.wav-2f178774c3994b71807e835da37525bd.sample"
+path="res://.godot/imported/creepy music 3.wav-1f52ce76e297799342761e515c1daea1.sample"
 
 [deps]
 
-source_file="res://Audio/creepy music 3.wav"
-dest_files=["res://.godot/imported/creepy music 3.wav-2f178774c3994b71807e835da37525bd.sample"]
+source_file="res://Audio/Music/creepy music 3.wav"
+dest_files=["res://.godot/imported/creepy music 3.wav-1f52ce76e297799342761e515c1daea1.sample"]
 
 [params]
 

@@ -6,10 +6,10 @@ var currentState = TimerState.HOME
 var seconds = 0
 var minutes = 0
 
-var homeSeconds = 12
+var homeSeconds = 20
 var homeMinutes = 0
 
-var visitSeconds = 20
+var visitSeconds = 30
 var visitMinutes = 0
 
 @export var tick_sound: AudioStreamWAV
