@@ -1,5 +1,7 @@
 # FPS Survival/Horror Tycoon Game Design Document
 
+**Written by *eyyMinda***
+
 ## Introduction
 
 This game is an FPS survival/horror with a tycoon gameloop, set in a spaceship environment. Players must navigate through the challenges of survival, repairing and upgrading their ship, while deciding whether to engage with others as friendlies or hostiles.
