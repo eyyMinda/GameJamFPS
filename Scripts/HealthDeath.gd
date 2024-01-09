@@ -11,7 +11,7 @@ func _on_body_part_hit(damage, resistance, part):
 	var true_damage = round(damage / resistance * DAMAGE_EFFECT)
 	health -= true_damage
 	play_hit_sound()
-	print("Dealt " + str(true_damage) + " to " + rootScene.name + part)
+	print("Dealt " + str(true_damage) + " to " + rootScene.name + " " + part)
 	
 	if health <= 0: destroy_object(rootScene)
 

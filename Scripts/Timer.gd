@@ -6,7 +6,7 @@ var currentState = TimerState.HOME
 var seconds = 0
 var minutes = 0
 
-var homeSeconds = 20
+var homeSeconds = 10
 var homeMinutes = 0
 
 var visitSeconds = 30
