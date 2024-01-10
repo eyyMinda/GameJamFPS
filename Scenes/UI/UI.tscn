@@ -1,0 +1,146 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr5iqey23jc7p"]
+
+[ext_resource type="Script" path="res://Scenes/UI/UI.gd" id="1_0i45s"]
+
+[node name="UI" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_0i45s")
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.368627, 0.156863, 0.0980392, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 256
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TabContainer" type="TabContainer" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/side_margin = 0
+theme_override_constants/outline_size = 1
+
+[node name="Game" type="MarginContainer" parent="Menu/MarginContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="GameGrid" type="GridContainer" parent="Menu/MarginContainer/VBoxContainer/TabContainer/Game"]
+layout_mode = 2
+tooltip_text = "Field of view"
+theme_override_constants/h_separation = 15
+columns = 2
+
+[node name="FOVLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/TabContainer/Game/GameGrid"]
+layout_mode = 2
+text = "FOV
+"
+
+[node name="FOVSlider" type="HSlider" parent="Menu/MarginContainer/VBoxContainer/TabContainer/Game/GameGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.025
+value = 1.0
+
+[node name="Audio" type="MarginContainer" parent="Menu/MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="AudioGrid" type="GridContainer" parent="Menu/MarginContainer/VBoxContainer/TabContainer/Audio"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/h_separation = 15
+columns = 2
+
+[node name="MasterLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/TabContainer/Audio/AudioGrid"]
+layout_mode = 2
+text = "Master
+"
+
+[node name="MasterSlider" type="HSlider" parent="Menu/MarginContainer/VBoxContainer/TabContainer/Audio/AudioGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.025
+value = 1.0
+
+[node name="MusicLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/TabContainer/Audio/AudioGrid"]
+layout_mode = 2
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="Menu/MarginContainer/VBoxContainer/TabContainer/Audio/AudioGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.025
+value = 1.0
+
+[node name="AnnouncementLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/TabContainer/Audio/AudioGrid"]
+layout_mode = 2
+text = "Announcements"
+
+[node name="AnnouncementSlider" type="HSlider" parent="Menu/MarginContainer/VBoxContainer/TabContainer/Audio/AudioGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.025
+value = 1.0
+
+[node name="SFXLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/TabContainer/Audio/AudioGrid"]
+layout_mode = 2
+text = "Sound Effects"
+
+[node name="SFXSlider" type="HSlider" parent="Menu/MarginContainer/VBoxContainer/TabContainer/Audio/AudioGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.025
+value = 1.0
+
+[node name="BackButton" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Back"
+
+[connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/TabContainer/Game/GameGrid/FOVSlider" to="." method="on_fov_slider_change"]
+[connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/TabContainer/Audio/AudioGrid/MasterSlider" to="." method="on_master_slider_change"]
+[connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/TabContainer/Audio/AudioGrid/MusicSlider" to="." method="on_music_slider_change"]
+[connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/TabContainer/Audio/AudioGrid/AnnouncementSlider" to="." method="on_announcement_slider_change"]
+[connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/TabContainer/Audio/AudioGrid/SFXSlider" to="." method="on_sfx_slider_change"]

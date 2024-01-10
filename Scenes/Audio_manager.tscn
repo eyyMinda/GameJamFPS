@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dc52chkmcmec0"]
+[gd_scene load_steps=5 format=3 uid="uid://dc52chkmcmec0"]
 
 [ext_resource type="Script" path="res://Scripts/Audio_manager.gd" id="1_0m8k5"]
+[ext_resource type="AudioStream" uid="uid://cxj5u6tg7cpcr" path="res://Audio/Music/creepy music 3.wav" id="2_o0rxt"]
+[ext_resource type="AudioStream" uid="uid://be27xr7evrph3" path="res://Audio/Music/BG My World #1.wav" id="3_3m23v"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bnp81"]
+streams_count = 2
+stream_0/stream = ExtResource("2_o0rxt")
+stream_0/weight = 10.0
+stream_1/stream = ExtResource("3_3m23v")
+stream_1/weight = 15.0
 
 [node name="AudioManager" type="Node3D" groups=["Audio"]]
 script = ExtResource("1_0m8k5")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_bnp81")
+autoplay = true
+bus = &"music"
+
+[connection signal="finished" from="MusicPlayer" to="." method="on_music_player_finished"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://drg1u58oikan2"]
 
-[ext_resource type="FontFile" uid="uid://dr4752jltvbx5" path="res://Assets/Pixeled.ttf" id="1_ljdy4"]
+[ext_resource type="FontFile" uid="uid://00ir0spa6b0d" path="res://Assets/Pixeled.ttf" id="1_6oa0l"]
 
 [sub_resource type="Gradient" id="Gradient_50a8l"]
 colors = PackedColorArray(0, 0, 0.156863, 1, 0.278431, 0.188235, 0.188235, 1)
@@ -42,7 +42,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("1_ljdy4")
+theme_override_fonts/font = ExtResource("1_6oa0l")
 theme_override_font_sizes/font_size = 9
 text = "GAME OVER
 press any key to restart"
@@ -67,7 +67,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("1_ljdy4")
+theme_override_fonts/font = ExtResource("1_6oa0l")
 theme_override_font_sizes/font_size = 30
 text = "1"
 horizontal_alignment = 1
@@ -82,7 +82,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("1_ljdy4")
+theme_override_fonts/font = ExtResource("1_6oa0l")
 theme_override_font_sizes/font_size = 5
 text = "TOTAL SURVIVED VISITS"
 horizontal_alignment = 1

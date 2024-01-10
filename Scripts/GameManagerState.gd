@@ -21,7 +21,7 @@ func reset_visits():
 # Function to handle game over
 func game_over():
 	if is_game_over == false:
-		game_over_hud_scene = preload("res://Scenes/GameOverHud.tscn") # Replace with your Game Over HUD scene path
+		game_over_hud_scene = preload("res://Scenes/UI/GameOverHud.tscn") # Replace with your Game Over HUD scene path
 		game_over_hud = game_over_hud_scene.instantiate()
 		var HUDVisitCounterLabel = game_over_hud.get_node("HBoxContainer/Survived Visit Count")
 		HUDVisitCounterLabel.text = (str(visit_count))

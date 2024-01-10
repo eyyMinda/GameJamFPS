@@ -5,7 +5,6 @@
 [ext_resource type="Script" path="res://Scripts/interactRay.gd" id="3_p85ax"]
 [ext_resource type="Script" path="res://Scripts/HitscanShoot.gd" id="4_n7d3a"]
 [ext_resource type="Script" path="res://Scripts/Footstep_manager.gd" id="5_37s7p"]
-[ext_resource type="PackedScene" uid="uid://grhh6pnjmg8k" path="res://Scenes/PlayerHUD.tscn" id="5_olrth"]
 [ext_resource type="AudioStream" uid="uid://co4uj6skac0dv" path="res://Audio/Player/Jump.wav" id="5_u3tyq"]
 [ext_resource type="AudioStream" uid="uid://b7v3grgamnowi" path="res://Audio/Player/footsteps/footstep-1.wav" id="6_admj1"]
 [ext_resource type="AudioStream" uid="uid://drf4wbvbdiv3u" path="res://Audio/Player/footsteps/footstep-2.wav" id="7_r5ic3"]
@@ -13,6 +12,7 @@
 [ext_resource type="Script" path="res://Scripts/CheckIfHome.gd" id="8_pjcl3"]
 [ext_resource type="AudioStream" uid="uid://vcmpcskehw5w" path="res://Audio/Player/footsteps/footstep-4.wav" id="9_b1f6d"]
 [ext_resource type="AudioStream" uid="uid://dx8qdl6c0r056" path="res://Audio/Player/footsteps/footstep-5.wav" id="10_h0hqw"]
+[ext_resource type="PackedScene" uid="uid://grhh6pnjmg8k" path="res://Scenes/UI/PlayerHUD.tscn" id="12_bpfrc"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ipunq"]
 
@@ -75,7 +75,7 @@ footstep_sounds = Array[AudioStreamWAV]([ExtResource("6_admj1"), ExtResource("7_
 jump_sound = ExtResource("5_u3tyq")
 ground_pos = NodePath("../GroundPosition")
 
-[node name="PlayerHud" parent="." instance=ExtResource("5_olrth")]
+[node name="PlayerHud" parent="." instance=ExtResource("12_bpfrc")]
 
 [node name="CheckifHome" type="Node" parent="."]
 script = ExtResource("8_pjcl3")
