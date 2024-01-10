@@ -21,7 +21,7 @@ const BOB_AMP: float = 0.07
 var t_bob: float = 0.0
 
 # FOV
-const BASE_FOV: float = 75.0
+var base_fov: float = 75.0
 const FOV_CHANGE: float = 1.5 # ratio of FOV change during movement based on speed
 
 # Footsteps
@@ -84,7 +84,7 @@ func _physics_process(delta):
 
 	# FOV
 	var velocity_clamped = clamp(velocity.length(), 0.5, MAX_SPEED_SPRINT * 2)
-	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
+	var target_fov = base_fov + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
 	# Head bob
@@ -111,6 +111,8 @@ func _headbob(time) -> Vector3:
 		
 	return pos
 
+func change_fov(value):
+	base_fov = value
 
 func ResetLocation():
 	global_transform.origin = starting_position

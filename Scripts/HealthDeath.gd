@@ -15,7 +15,7 @@ func _on_body_part_hit(damage, resistance, part):
 	
 	if health <= 0: destroy_object(rootScene)
 
-# Method to destroy the object when health reaches zero
+# Destroy the object when health reaches zero
 func destroy_object(object: Object):
 	object.queue_free()
 	print("Entity killed")

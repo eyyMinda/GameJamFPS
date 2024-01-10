@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c7e6gpourd3rk"]
+[gd_scene load_steps=15 format=3 uid="uid://c7e6gpourd3rk"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_1a1a3"]
 [ext_resource type="PackedScene" uid="uid://ce0ch5vrqo2t8" path="res://Scenes/Items/Rifle.tscn" id="2_o4mdi"]
@@ -12,7 +12,6 @@
 [ext_resource type="Script" path="res://Scripts/CheckIfHome.gd" id="8_pjcl3"]
 [ext_resource type="AudioStream" uid="uid://vcmpcskehw5w" path="res://Audio/Player/footsteps/footstep-4.wav" id="9_b1f6d"]
 [ext_resource type="AudioStream" uid="uid://dx8qdl6c0r056" path="res://Audio/Player/footsteps/footstep-5.wav" id="10_h0hqw"]
-[ext_resource type="PackedScene" uid="uid://grhh6pnjmg8k" path="res://Scenes/UI/PlayerHUD.tscn" id="12_bpfrc"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ipunq"]
 
@@ -75,12 +74,9 @@ footstep_sounds = Array[AudioStreamWAV]([ExtResource("6_admj1"), ExtResource("7_
 jump_sound = ExtResource("5_u3tyq")
 ground_pos = NodePath("../GroundPosition")
 
-[node name="PlayerHud" parent="." instance=ExtResource("12_bpfrc")]
-
 [node name="CheckifHome" type="Node" parent="."]
 script = ExtResource("8_pjcl3")
 
-[connection signal="raycast_hit" from="CharacterBody3D/NeckPivot/Camera3D/InteractRay" to="PlayerHud" method="_on_interact_ray_raycast_hit"]
 [connection signal="start_shooting" from="CharacterBody3D/NeckPivot/Camera3D/AimCast" to="CharacterBody3D/NeckPivot/Camera3D/Rifle" method="start_shooting"]
 
 [editable path="CharacterBody3D/NeckPivot/Camera3D/Rifle"]

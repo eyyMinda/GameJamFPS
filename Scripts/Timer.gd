@@ -15,7 +15,7 @@ var visitMinutes = 0
 @export var tick_sound: AudioStreamWAV
 
 var visitAdded = false
-var escapedToHome = true; # for testing, replace with 'player location in home ship?' boolean
+var escapedToHome = true; # replace with 'player location in home ship?' boolean
 
 func _ready():
 	reset_timer()

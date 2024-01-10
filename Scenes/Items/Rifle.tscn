@@ -46,7 +46,6 @@ gun_sound = ExtResource("3_mj6pj")
 bullet = ExtResource("3_jyuts")
 
 [node name="WeaponMesh" parent="." instance=ExtResource("2_gd1qa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

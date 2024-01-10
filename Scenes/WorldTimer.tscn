@@ -4,7 +4,14 @@
 [ext_resource type="FontFile" uid="uid://00ir0spa6b0d" path="res://Assets/Pixeled.ttf" id="2_6m0wk"]
 [ext_resource type="AudioStream" uid="uid://dh67f8wajucx6" path="res://Audio/Misc/clock-tick.wav" id="2_jblps"]
 
-[node name="WorldTimer" type="Node3D"]
+[node name="WorldTimer" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -96.0
+offset_bottom = 42.0
+grow_horizontal = 0
 
 [node name="Timer" type="Timer" parent="." groups=["Timer"]]
 autostart = true
@@ -13,13 +20,11 @@ tick_sound = ExtResource("2_jblps")
 
 [node name="TimerLabel" type="Label" parent="."]
 unique_name_in_owner = true
-anchors_preset = 1
+layout_mode = 2
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -81.0
-offset_top = -6.0
-offset_right = 15.0
-offset_bottom = 36.0
+offset_left = -96.0
+offset_bottom = 42.0
 theme_override_colors/font_color = Color(0, 0.839216, 0.952941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
