@@ -16,8 +16,9 @@ const MAX_LOOK_DOWN: float = -75
 const MAX_LOOK_UP: float = 100
 
 # Head bob
-const BOB_FREQ: float = 3
-const BOB_AMP: float = 0.07
+const BOB_FREQ: float = 3.0
+var bob_amp: float = 0.06 # Default 0.06
+
 var t_bob: float = 0.0
 
 # FOV
@@ -96,10 +97,10 @@ func _physics_process(delta):
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
-	pos.y = sin(time * BOB_FREQ) * BOB_AMP
-	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
+	pos.y = sin(time * BOB_FREQ) * bob_amp
+	pos.x = cos(time * BOB_FREQ / 2) * bob_amp
 	
-	var low_pos = BOB_AMP - 0.04
+	var low_pos = bob_amp / 2
 	# Check if we have reached a high point so we restart can_play
 	if pos.y > -low_pos:
 		can_play = true
@@ -111,8 +112,10 @@ func _headbob(time) -> Vector3:
 		
 	return pos
 
-func change_fov(value):
-	base_fov = value
+# Player Settings
+func change_fov(value): base_fov = value
+func toggle_headbob(val): bob_amp = 0.06 if val else 0.01
+
 
 func ResetLocation():
 	global_transform.origin = starting_position

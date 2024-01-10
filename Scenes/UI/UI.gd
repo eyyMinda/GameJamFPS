@@ -11,6 +11,7 @@ extends CanvasLayer
 @onready var player_hud = $PlayerHUD
 @onready var interact_label = %InteractPrompt
 
+@onready var player = get_tree().get_first_node_in_group("Player")
 @onready var fov_label = %FOVLabel
 @onready var fov_slider = %FOVSlider
 
@@ -58,7 +59,7 @@ func toggle_menu_panel(panel, second = null):
 		panels[key].visible = key == panel || key == second
 
 
-# ============== Audio ====================
+# ============== Audio Settings ====================
 func on_master_slider_change(value):
 	change_bus_volume(value, bus_ids.master)
 
@@ -76,12 +77,16 @@ func change_bus_volume(value, bus_id):
 	AudioServer.set_bus_mute(bus_id, value < 0.025)
 
 
-# ============== FOV ====================
+# ============== Game Settings ====================
 func on_fov_slider_change(value):
 	fov_label.text = "FOV " + str(value)
-	get_tree().get_first_node_in_group("Player").change_fov(value)
+	player.change_fov(value)
 
+func _on_head_bob_toggled(toggled_on):
+	player.toggle_headbob(toggled_on)
 
 # ============== Interact Prompt ====================
 func set_interact_prompt(text):
 	interact_label.text = text
+
+

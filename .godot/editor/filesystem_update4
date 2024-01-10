@@ -7,3 +7,6 @@ res://Scenes/Items/Rifle.tscn
 res://Scenes/Other/Bullet.tscn
 res://Scenes/Entities/Enemy.tscn
 res://Scenes/NPCCharacter.tscn
+res://Scripts/Player.gd
+res://default_bus_layout.tres
+res://Scenes/UI/UI.gd

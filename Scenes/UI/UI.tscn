@@ -60,7 +60,6 @@ alignment = 1
 
 [node name="Settings" type="TabContainer" parent="Menu/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/side_margin = 0
@@ -68,9 +67,9 @@ theme_override_constants/outline_size = 1
 
 [node name="Game" type="MarginContainer" parent="Menu/MarginContainer/VBoxContainer/Settings"]
 layout_mode = 2
-theme_override_constants/margin_left = 15
+theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
+theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 15
 
 [node name="GameGrid" type="GridContainer" parent="Menu/MarginContainer/VBoxContainer/Settings/Game"]
@@ -79,6 +78,16 @@ size_flags_vertical = 4
 tooltip_text = "Field of view"
 theme_override_constants/h_separation = 15
 columns = 2
+
+[node name="HeadBobLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid"]
+layout_mode = 2
+text = "Head Bob
+"
+
+[node name="HeadBob" type="CheckButton" parent="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid"]
+layout_mode = 2
+size_flags_horizontal = 8
+button_pressed = true
 
 [node name="FOVLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid"]
 unique_name_in_owner = true
@@ -168,6 +177,7 @@ text = "Back"
 
 [node name="Main" type="GridContainer" parent="Menu/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
@@ -314,6 +324,7 @@ vertical_alignment = 1
 [node name="WorldTimer" parent="PlayerHUD" instance=ExtResource("7_3q4tp")]
 layout_mode = 1
 
+[connection signal="toggled" from="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid/HeadBob" to="." method="_on_head_bob_toggled"]
 [connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid/FOVSlider" to="." method="on_fov_slider_change"]
 [connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid/MasterSlider" to="." method="on_master_slider_change"]
 [connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid/MusicSlider" to="." method="on_music_slider_change"]
