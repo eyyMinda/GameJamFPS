@@ -1,11 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1704915218
-default_bus_layout.tres::AudioBusLayout::598430467609493921::1704918999::0::1::::<><>::
-galaxy-pattern-on-a-dark-space-background-vector.webp::CompressedTexture2D::4700878465747923968::1704915194::1704915218::1::::<><>::
+::res://::1704928396
+default_bus_layout.tres::AudioBusLayout::598430467609493921::1704928396::0::1::::<><>::
 icon.svg::CompressedTexture2D::4838405133221566364::1704121756::1704745095::1::::<><>::
-README.md::TextFile::-1::1704814869::0::1::::<><>::
+README.md::TextFile::-1::1704928396::0::1::::<><>::
 wakatime_logo.jpg::CompressedTexture2D::5576373333580567084::1704225390::1704745095::1::::<><>::
-World.tscn::PackedScene::659828331445894884::1704920758::0::1::::<><>::uid://pqaqso0g0r4c::::res://Ships/ShipChanger.tscn<>res://Shaders/Retro.gdshader<>uid://c7e6gpourd3rk::::res://Scenes/MainCharacter.tscn<>res://Scripts/NavMeshUpdate.gd<>uid://dcqet8dydslqq::::res://Scenes/Door.tscn<>uid://bxuduxsik8n88::::res://Scenes/Entities/Enemy.tscn<>uid://1wkmvuasmfa8::::res://Scenes/GameManager.tscn<>uid://c8khpbnsk7sc5::::res://Scenes/NPCCharacter.tscn<>uid://dc52chkmcmec0::::res://Scenes/Audio_manager.tscn<>uid://cr5iqey23jc7p::::res://Scenes/UI/UI.tscn
+World.tscn::PackedScene::659828331445894884::1704928396::0::1::::<><>::uid://pqaqso0g0r4c::::res://Ships/ShipChanger.tscn<>res://Shaders/Retro.gdshader<>uid://c7e6gpourd3rk::::res://Scenes/MainCharacter.tscn<>res://Scripts/NavMeshUpdate.gd<>uid://dcqet8dydslqq::::res://Scenes/Door.tscn<>uid://bxuduxsik8n88::::res://Scenes/Entities/Enemy.tscn<>uid://1wkmvuasmfa8::::res://Scenes/GameManager.tscn<>uid://c8khpbnsk7sc5::::res://Scenes/NPCCharacter.tscn<>uid://dc52chkmcmec0::::res://Scenes/Audio_manager.tscn<>uid://cr5iqey23jc7p::::res://Scenes/UI/UI.tscn
 ::res://addons/::1704823552
 ::res://addons/godot-git-plugin/::1704745879
 git_plugin.gdextension::GDExtension::-1::1704745879::0::1::::<><>::
@@ -13,13 +12,13 @@ plugin.cfg::TextFile::-1::1704745879::0::1::::<><>::
 THIRDPARTY.md::TextFile::-1::1704745879::0::1::::<><>::
 ::res://addons/godot-git-plugin/linux/::1704745879
 ::res://addons/godot-git-plugin/macos/::1704745879
-::res://addons/godot-git-plugin/win64/::1704921000
+::res://addons/godot-git-plugin/win64/::1704928404
 ::res://addons/wakatime/::1704745080
 api_key_prompt.tscn::PackedScene::7230738953370575059::1704225390::0::1::::<><>::
 heartbeat.gd::GDScript::-1::1704225390::0::1::::<>RefCounted<>::
 plugin.cfg::TextFile::-1::1704225390::0::1::::<><>::
 wakatime.gd::GDScript::-1::1704225390::0::1::::<>EditorPlugin<>::
-::res://Art/::1704915221
+::res://Art/::1704928396
 Door.fbx::PackedScene::5272562406662698325::1704150021::1704155392::1::::<><>::
 EmissiveGlow.tres::StandardMaterial3D::1064273350889026452::1704146704::0::1::::<><>::
 EmissiveGlowRed.tres::StandardMaterial3D::4050121172776755754::1704312253::0::1::::<><>::
@@ -31,7 +30,7 @@ LeftShip2.fbx::PackedScene::7526453991804326966::1704331336::1704139294::1::::<>
 LeftShip3.fbx::PackedScene::4116941615206614235::1704331336::1704311776::1::::<><>::
 LeftShip4.fbx::PackedScene::7952194704141900203::1704331336::1704311777::1::::<><>::
 MainShip.fbx::PackedScene::3012329926819139338::1704331336::1704331412::1::::<><>::
-menu-bg.webp::CompressedTexture2D::2380084021372926902::1704915182::1704915222::1::::<><>::
+menu-bg.webp::CompressedTexture2D::2380084021372926902::1704928396::1704928396::1::::<><>::
 NPC_Character.fbx::PackedScene::1675916971633485786::1704326139::1704328866::1::::<><>::
 Weapon.fbx::PackedScene::7315064863161483637::1704146704::1704139482::1::::<><>::
 ::res://Assets/::1704745080
@@ -48,8 +47,8 @@ Shoot.wav::AudioStreamWAV::2969703143514121932::1704325434::1704325435::1::::<><
 success.wav::AudioStreamWAV::2733542824778257919::1704142262::1704142264::1::::<><>::
 ::res://Audio/Misc/::1704745080
 clock-tick.wav::AudioStreamWAV::7716533306928502373::1704568879::1704568879::1::::<><>::
-::res://Audio/Music/::1704915144
-BG My World #1.wav::AudioStreamWAV::2724899217174368286::1704211588::1704839516::1::::<><>::
+::res://Audio/Music/::1704928396
+BG My World #1.wav::AudioStreamWAV::2724899217174368286::1704928396::1704928396::1::::<><>::
 creepy music 3.wav::AudioStreamWAV::6407623054399186465::1704213037::1704803737::1::::<><>::
 Rerto Rock Theme (looped).wav::AudioStreamWAV::2538675807130142822::1704141578::1704476763::1::::<><>::
 ::res://Audio/Player/::1704745080
@@ -63,48 +62,45 @@ footstep-5.wav::AudioStreamWAV::8842707375674764567::1704476435::1704476436::1::
 ::res://Docs/::1704818083
 PGD Game Design Document.md::TextFile::-1::1704818083::0::1::::<><>::
 ::res://Prefabs/::1704583933
-::res://Scenes/::1704835141
-Audio_manager.tscn::PackedScene::7363214385029534829::1704917717::0::1::::<><>::res://Scripts/Audio_manager.gd<>uid://cxj5u6tg7cpcr::::res://Audio/Music/creepy music 3.wav<>uid://be27xr7evrph3::::res://Audio/Music/BG My World #1.wav
+::res://Scenes/::1704928396
+Audio_manager.tscn::PackedScene::7363214385029534829::1704928396::0::1::::<><>::res://Scripts/Audio_manager.gd<>uid://cxj5u6tg7cpcr::::res://Audio/Music/creepy music 3.wav<>uid://be27xr7evrph3::::res://Audio/Music/BG My World #1.wav
 Button.tscn::PackedScene::5834265582887832029::1704157581::0::1::::<><>::res://Scripts/Interactable.gd
 Door.tscn::PackedScene::7332948319475731164::1704917716::0::1::::<><>::res://Scripts/Interactable.gd<>res://Scripts/Door.gd<>uid://c2q7j7biitsuo::::res://Audio/DoorOpen.wav<>uid://b2t3s2co8lsef::::res://Audio/DoorClose.wav
-GameManager.tscn::PackedScene::1870955978543653301::1704835139::0::1::::<><>::res://Scripts/GameManagerState.gd<>uid://drg1u58oikan2::::res://Scenes/UI/GameOverHud.tscn
-MainCharacter.tscn::PackedScene::7029035626767758308::1704920758::0::1::::<><>::res://Scripts/Player.gd<>uid://ce0ch5vrqo2t8::::res://Scenes/Items/Rifle.tscn<>res://Scripts/interactRay.gd<>res://Scripts/HitscanShoot.gd<>res://Scripts/Footstep_manager.gd<>uid://co4uj6skac0dv::::res://Audio/Player/Jump.wav<>uid://b7v3grgamnowi::::res://Audio/Player/footsteps/footstep-1.wav<>uid://drf4wbvbdiv3u::::res://Audio/Player/footsteps/footstep-2.wav<>uid://bqx4tqywwbbgj::::res://Audio/Player/footsteps/footstep-3.wav<>res://Scripts/CheckIfHome.gd<>uid://vcmpcskehw5w::::res://Audio/Player/footsteps/footstep-4.wav<>uid://dx8qdl6c0r056::::res://Audio/Player/footsteps/footstep-5.wav
-NPCCharacter.tscn::PackedScene::7110168864278094410::1704920758::0::1::::<><>::res://Scripts/NPC.gd<>uid://cbopjsmqdwc81::::res://Audio/64 Damage Sound Effect.wav<>res://Scripts/Interactable.gd<>res://Scripts/HealthDeath.gd<>res://Scripts/BodyPart.gd
-WorldTimer.tscn::PackedScene::6999124952303949700::1704920758::0::1::::<><>::res://Scripts/Timer.gd<>uid://00ir0spa6b0d::::res://Assets/Pixeled.ttf<>uid://dh67f8wajucx6::::res://Audio/Misc/clock-tick.wav
-::res://Scenes/Entities/::1704745080
-Enemy.tscn::PackedScene::4042270745527131487::1704920758::0::1::::<><>::res://Scripts/Enemy.gd<>uid://bcb5i1f67q8lp::::res://Art/EnemyMaterial.tres<>res://Scripts/HealthDeath.gd<>res://Scripts/BodyPart.gd<>uid://cbopjsmqdwc81::::res://Audio/64 Damage Sound Effect.wav
-::res://Scenes/Items/::1704745080
-Rifle.tscn::PackedScene::5105341729268456035::1704920758::0::1::::<><>::res://Scripts/Guns/Rifle.gd<>uid://dchqbxjuanoif::::res://Art/Weapon.fbx<>uid://b8msh684y0s0::::res://Scenes/Other/Bullet.tscn<>uid://bikstu5jbt7lo::::res://Audio/Shoot.wav
-::res://Scenes/Other/::1704745080
-Bullet.tscn::PackedScene::139074474816974161::1704920758::0::1::::<><>::res://Scripts/Bullet.gd
-::res://Scenes/UI/::1704919808
-GameOverHud.tscn::PackedScene::8366474644466468517::1704842240::0::1::::<><>::uid://00ir0spa6b0d::::res://Assets/Pixeled.ttf
-PlayerHUD.tscn::PackedScene::316205019368517491::1704919808::0::1::::<><>::uid://00ir0spa6b0d::::res://Assets/Pixeled.ttf<>uid://b7fmlo06k6u6j::::res://Assets/crosshair.webp<>res://Scripts/UpdateVisitCount.gd<>uid://c6yothtw78j7y::::res://Scenes/WorldTimer.tscn<>res://Scripts/Announcement.gd
-UI.gd::GDScript::-1::1704920825::0::1::::<>CanvasLayer<>::
-UI.tscn::PackedScene::6028497598932393535::1704920941::0::1::::<><>::res://Scenes/UI/UI.gd<>uid://856vvlf3m4ni::::res://Art/menu-bg.webp<>uid://b7fmlo06k6u6j::::res://Assets/crosshair.webp<>uid://00ir0spa6b0d::::res://Assets/Pixeled.ttf<>res://Scripts/Announcement.gd<>res://Scripts/UpdateVisitCount.gd<>uid://c6yothtw78j7y::::res://Scenes/WorldTimer.tscn
-::res://Scripts/::1704919799
+GameManager.tscn::PackedScene::1870955978543653301::1704928396::0::1::::<><>::res://Scripts/GameManagerState.gd
+MainCharacter.tscn::PackedScene::7029035626767758308::1704928396::0::1::::<><>::res://Scripts/Player.gd<>uid://ce0ch5vrqo2t8::::res://Scenes/Items/Rifle.tscn<>res://Scripts/interactRay.gd<>res://Scripts/HitscanShoot.gd<>res://Scripts/Footstep_manager.gd<>uid://co4uj6skac0dv::::res://Audio/Player/Jump.wav<>uid://b7v3grgamnowi::::res://Audio/Player/footsteps/footstep-1.wav<>uid://drf4wbvbdiv3u::::res://Audio/Player/footsteps/footstep-2.wav<>uid://bqx4tqywwbbgj::::res://Audio/Player/footsteps/footstep-3.wav<>res://Scripts/CheckIfHome.gd<>uid://vcmpcskehw5w::::res://Audio/Player/footsteps/footstep-4.wav<>uid://dx8qdl6c0r056::::res://Audio/Player/footsteps/footstep-5.wav
+NPCCharacter.tscn::PackedScene::7110168864278094410::1704928305::0::1::::<><>::res://Scripts/NPC.gd<>uid://cbopjsmqdwc81::::res://Audio/64 Damage Sound Effect.wav<>res://Scripts/Interactable.gd<>res://Scripts/HealthDeath.gd<>res://Scripts/BodyPart.gd
+WorldTimer.tscn::PackedScene::6999124952303949700::1704928396::0::1::::<><>::res://Scripts/Timer.gd<>uid://00ir0spa6b0d::::res://Assets/Pixeled.ttf<>uid://dh67f8wajucx6::::res://Audio/Misc/clock-tick.wav
+::res://Scenes/Entities/::1704928396
+Enemy.tscn::PackedScene::4042270745527131487::1704928396::0::1::::<><>::res://Scripts/Enemy.gd<>uid://bcb5i1f67q8lp::::res://Art/EnemyMaterial.tres<>res://Scripts/HealthDeath.gd<>res://Scripts/BodyPart.gd<>uid://cbopjsmqdwc81::::res://Audio/64 Damage Sound Effect.wav
+::res://Scenes/Items/::1704928396
+Rifle.tscn::PackedScene::5105341729268456035::1704928396::0::1::::<><>::res://Scripts/Guns/Rifle.gd<>uid://dchqbxjuanoif::::res://Art/Weapon.fbx<>uid://b8msh684y0s0::::res://Scenes/Other/Bullet.tscn<>uid://bikstu5jbt7lo::::res://Audio/Shoot.wav
+::res://Scenes/Other/::1704928396
+Bullet.tscn::PackedScene::139074474816974161::1704928396::0::1::::<><>::res://Scripts/Bullet.gd
+::res://Scenes/UI/::1704928396
+UI.gd::GDScript::-1::1704928396::0::1::::<>CanvasLayer<>::
+UI.tscn::PackedScene::6028497598932393535::1704928396::0::1::::<><>::res://Scenes/UI/UI.gd<>uid://856vvlf3m4ni::::res://Art/menu-bg.webp<>uid://b7fmlo06k6u6j::::res://Assets/crosshair.webp<>uid://00ir0spa6b0d::::res://Assets/Pixeled.ttf<>res://Scripts/Announcement.gd<>res://Scripts/UpdateVisitCount.gd<>uid://c6yothtw78j7y::::res://Scenes/WorldTimer.tscn
+::res://Scripts/::1704928396
 Announcement.gd::GDScript::-1::1704329275::0::1::::<>Label<>::
-Audio_manager.gd::GDScript::-1::1704845904::0::1::::<>Node3D<>::
+Audio_manager.gd::GDScript::-1::1704928396::0::1::::<>Node3D<>::
 BodyPart.gd::GDScript::-1::1704584582::0::1::::<>Node<>::
 Bullet.gd::GDScript::-1::1704581111::0::1::::<>Node3D<>::
 CheckIfHome.gd::GDScript::-1::1704329370::0::1::::<>Node<>::
-Door.gd::GDScript::-1::1704833305::0::1::::<>Node3D<>::
+Door.gd::GDScript::-1::1704928396::0::1::::<>Node3D<>::
 Enemy.gd::GDScript::-1::1704816475::0::1::::<>CharacterBody3D<>::
-Footstep_manager.gd::GDScript::-1::1704833297::0::1::::<>Node3D<>::
-GameManagerState.gd::GDScript::-1::1704838938::0::1::::<>Node<>::
-HealthDeath.gd::GDScript::-1::1704833285::0::1::::<>Node<>::
+Footstep_manager.gd::GDScript::-1::1704928396::0::1::::<>Node3D<>::
+GameManagerState.gd::GDScript::-1::1704928396::0::1::::<>Node<>::
+HealthDeath.gd::GDScript::-1::1704928396::0::1::::<>Node<>::
 HitscanShoot.gd::GDScript::-1::1704587305::0::1::::<>RayCast3D<>::
 Interactable.gd::GDScript::-1::1704306239::0::1::::Interactable<>StaticBody3D<>::
-Interaction.gd::GDScript::-1::1704134615::0::1::::<>Camera3D<>::
-interactRay.gd::GDScript::-1::1704920941::0::1::::<>RayCast3D<>::
+interactRay.gd::GDScript::-1::1704928396::0::1::::<>RayCast3D<>::
 NavMeshUpdate.gd::GDScript::-1::1704585709::0::1::::<>NavigationRegion3D<>::
-NPC.gd::GDScript::-1::1704570504::0::1::::<>Node3D<>::
-Player.gd::GDScript::-1::1704914781::0::1::::Player<>CharacterBody3D<>::
+NPC.gd::GDScript::-1::1704926792::0::1::::<>Node3D<>::
+Player.gd::GDScript::-1::1704928396::0::1::::Player<>CharacterBody3D<>::
 randomShipName.gd::GDScript::-1::1704136616::0::1::::RandomShipName<>Node3D<>::
-Timer.gd::GDScript::-1::1704920910::0::1::::<>Timer<>::
-UpdateVisitCount.gd::GDScript::-1::1704228636::0::1::::<>Node<>::
-::res://Scripts/Guns/::1704745080
-Rifle.gd::GDScript::-1::1704919580::0::1::::<>Node3D<>::
+Timer.gd::GDScript::-1::1704928396::0::1::::<>Timer<>::
+UpdateVisitCount.gd::GDScript::-1::1704928396::0::1::::<>Node<>::
+::res://Scripts/Guns/::1704928396
+Rifle.gd::GDScript::-1::1704928396::0::1::::<>Node3D<>::
 ::res://Shaders/::1704745080
 Retro.gdshader::Shader::-1::1704334201::0::1::::<><>::
 ::res://Ships/::1704745080
