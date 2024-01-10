@@ -6,7 +6,7 @@ var currentState = TimerState.HOME
 var seconds = 0
 var minutes = 0
 
-var homeSeconds = 10
+var homeSeconds = 2
 var homeMinutes = 0
 
 var visitSeconds = 30
@@ -59,8 +59,7 @@ func update_timer_label():
 	%TimerLabel.text = "%02d:%02d" % [minutes, seconds]
 
 func play_tick_sound():
-	var args = [tick_sound, "2D", get_owner(), randf_range(.9, 1.1), -5]
-	get_tree().get_nodes_in_group("Audio")[0].callv("play_sound", args)
+	AudioManager.play_sound(tick_sound, "announcement", get_owner(), randf_range(0.9, 1.1), -5.0)
 
 func reset_timer():
 	if currentState == TimerState.HOME:

@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var gun_frequency: float = .8
-@export var gun_sound: AudioStreamWAV
+@export var gun_sound: AudioStream
 @export var bullet: PackedScene
 
 @onready var gun_anim = $AnimationPlayer
@@ -24,8 +24,7 @@ func startCooldown():
 
 func playAnimSound():
 	gun_anim.play("Shoot")
-	var args = [gun_sound, "3D", gun_barrel, randf_range(.7, 1.5), -24.5]
-	get_tree().get_nodes_in_group("Audio")[0].callv("play_sound", args)
+	AudioManager.play_sound(gun_sound, "sfx", gun_barrel, randf_range(.7, 1.5), -24.5)
 
 func spawnBullet(col_point):
 	bullet_instance = bullet.instantiate()

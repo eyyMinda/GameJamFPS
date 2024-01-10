@@ -14,14 +14,7 @@ func _ready():
 func play_step_sound():
 	var random_index: int = randi_range(0, footstep_sounds.size() - 1)
 	var stream = footstep_sounds[random_index]
-	var args = [stream, "3D", ground_pos, randf_range(1, 1.8), -30]
-	play_sound(args)
-	
+	AudioManager.play_sound(stream, "sfx", ground_pos, randf_range(1, 1.8), -30.0)
+
 func play_jump_sound():
-	var args = [jump_sound, "3D", ground_pos, randf_range(0.95, 1.05), -30]
-	play_sound(args)
-
-
-func play_sound(args: Array):
-	get_tree().get_nodes_in_group("Audio")[0].callv("play_sound", args)
-	
+	AudioManager.play_sound(jump_sound, "sfx", ground_pos, randf_range(0.95, 1.05), -30.0)

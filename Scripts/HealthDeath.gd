@@ -21,5 +21,4 @@ func destroy_object(object: Object):
 	print("Entity killed")
 	
 func play_hit_sound():
-	var args = [hit_sound, "3D", rootScene, randf_range(.8, 1.2), -15]
-	get_tree().get_nodes_in_group("Audio")[0].callv("play_sound", args)
+	AudioManager.play_sound(hit_sound, "sfx", rootScene, randf_range(0.8, 1.2), -15.0)

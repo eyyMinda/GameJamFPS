@@ -9,7 +9,7 @@ const ACCELERATION: float = 7.0
 const ACCELERATION_SPRINT: float = 10.0
 const DECELERATION: float = 3.0
 const JUMP_VELOCITY: float = 4.5
-const SENSITIVITY: float = 0.005
+const SENSITIVITY: float = 0.002
 
 # Camera
 const MAX_LOOK_DOWN: float = -75
