@@ -3,26 +3,27 @@ extends CharacterBody3D
 
 # Movement
 var speed: float; var acceleration: float;
-const MAX_SPEED_WALK: float = 3.5
-const MAX_SPEED_SPRINT: float = 5.5
-const ACCELERATION: float = 7.0
-const ACCELERATION_SPRINT: float = 10.0
-const DECELERATION: float = 3.0
-const JUMP_VELOCITY: float = 4.5
-const SENSITIVITY: float = 0.005
+const MAX_SPEED_WALK := 3.5
+const MAX_SPEED_SPRINT := 5.5
+const ACCELERATION := 7.0
+const ACCELERATION_SPRINT := 10.0
+const DECELERATION := 2.0
+const JUMP_VELOCITY := 4.5
+const SENSITIVITY := 0.002
 
 # Camera
-const MAX_LOOK_DOWN: float = -75
-const MAX_LOOK_UP: float = 100
+const MAX_LOOK_DOWN := -75.0
+const MAX_LOOK_UP := 100.0
 
 # Head bob
-const BOB_FREQ: float = 3
-const BOB_AMP: float = 0.07
-var t_bob: float = 0.0
+const BOB_FREQ := 3.0
+var bob_amp := 0.06 # Default 0.06
+
+var t_bob := 0.0
 
 # FOV
-const BASE_FOV: float = 75.0
-const FOV_CHANGE: float = 1.5 # ratio of FOV change during movement based on speed
+var base_fov := 75.0
+const FOV_CHANGE := 1.5 # ratio of FOV change during movement based on speed
 
 # Footsteps
 var can_play: bool = true
@@ -84,7 +85,7 @@ func _physics_process(delta):
 
 	# FOV
 	var velocity_clamped = clamp(velocity.length(), 0.5, MAX_SPEED_SPRINT * 2)
-	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
+	var target_fov = base_fov + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
 	# Head bob
@@ -96,10 +97,10 @@ func _physics_process(delta):
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
-	pos.y = sin(time * BOB_FREQ) * BOB_AMP
-	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
+	pos.y = sin(time * BOB_FREQ) * bob_amp
+	pos.x = cos(time * BOB_FREQ / 2) * bob_amp
 	
-	var low_pos = BOB_AMP - 0.04
+	var low_pos = bob_amp / 2
 	# Check if we have reached a high point so we restart can_play
 	if pos.y > -low_pos:
 		can_play = true
@@ -110,6 +111,10 @@ func _headbob(time) -> Vector3:
 		emit_signal("step")
 		
 	return pos
+
+# Player Settings
+func change_fov(value): base_fov = value
+func toggle_headbob(val): bob_amp = 0.06 if val else 0.01
 
 
 func ResetLocation():

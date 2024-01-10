@@ -16,5 +16,6 @@ func _physics_process(_delta):
 				
 	# Check if the detected name has changed or if there's no longer a collision
 	if current_detected_name != last_detected_name or (last_detected_name != "" and not is_colliding()):
-		raycast_hit.emit(current_detected_name)
+		var UI = get_tree().get_first_node_in_group("UI")
+		UI.set_interact_prompt(current_detected_name)
 		last_detected_name = current_detected_name

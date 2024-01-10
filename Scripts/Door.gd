@@ -24,11 +24,7 @@ func toggle_door(body):
 		var targetPositionY = initialPositionY + (TRANSLATION_AMOUNT * float(isOpen))
 		move_door(targetPositionY)
 		
-		if isOpen: stream = DoorOpen
-		else: stream = DoorClose
-		var args = [stream, "3D", self, 1.2, -15]
-		get_tree().get_nodes_in_group("Audio")[0].callv("play_sound", args)
-		
+		AudioManager.play_sound(DoorOpen if isOpen else DoorClose, "sfx", self, 1.2, -15.0)
 	else:
 		get_tree().call_group("Announcement", "Notify", 2.0, body + " is inaccessible")
 

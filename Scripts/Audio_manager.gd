@@ -1,14 +1,36 @@
 extends Node3D
 
-func play_sound(stream, type = "3D", parent = self, pitchscale = 1, volume = -10):
-	var audio_player
-	match type:
-		"3D": audio_player = AudioStreamPlayer3D.new()
-		"2D": audio_player = AudioStreamPlayer2D.new()
+@onready var music_player := %MusicPlayer
+
+var sound_types = {
+	"music": Callable(AudioStreamPlayer2D, "new"),
+	"announcement": Callable(AudioStreamPlayer2D, "new"),
+	"sfx": Callable(AudioStreamPlayer3D, "new")
+}
+
+func _ready(): pass
+
+func play_sound(stream, sound_type = "sfx", parent = self, pitchscale = 1.0, volume = 0.0):
+	var audio_player = find_audio_stream_player(parent, stream)
+	
+	if audio_player: audio_player.stop()
+	else:
+		audio_player = sound_types[sound_type].call()
+		parent.add_child(audio_player)
+		audio_player.finished.connect(func destory(): audio_player.queue_free())
+
 	audio_player.stream = stream
 	audio_player.pitch_scale = pitchscale
+	audio_player.bus = sound_type
 	audio_player.volume_db = volume
-	parent.add_child(audio_player)
-	
 	audio_player.play()
-	audio_player.finished.connect(func destory(): audio_player.queue_free())
+
+
+func find_audio_stream_player(parent, stream):
+	for child in parent.get_children():
+		if child is AudioStreamPlayer2D or child is AudioStreamPlayer3D:
+			if child.stream == stream: return child
+	return null
+
+func on_music_player_finished():
+	music_player.play()

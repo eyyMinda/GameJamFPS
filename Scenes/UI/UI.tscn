@@ -1,0 +1,487 @@
+[gd_scene load_steps=9 format=3 uid="uid://cr5iqey23jc7p"]
+
+[ext_resource type="Script" path="res://Scenes/UI/UI.gd" id="1_0i45s"]
+[ext_resource type="Texture2D" uid="uid://856vvlf3m4ni" path="res://Art/menu-bg.webp" id="2_a3puv"]
+[ext_resource type="Texture2D" uid="uid://b7fmlo06k6u6j" path="res://Assets/crosshair.webp" id="3_wjjro"]
+[ext_resource type="FontFile" uid="uid://00ir0spa6b0d" path="res://Assets/Pixeled.ttf" id="4_xkn12"]
+[ext_resource type="Script" path="res://Scripts/Announcement.gd" id="5_p4uto"]
+[ext_resource type="Script" path="res://Scripts/UpdateVisitCount.gd" id="6_61sup"]
+[ext_resource type="PackedScene" uid="uid://c6yothtw78j7y" path="res://Scenes/WorldTimer.tscn" id="7_3q4tp"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qqu3e"]
+
+[node name="UI" type="CanvasLayer" groups=["UI"]]
+follow_viewport_enabled = true
+script = ExtResource("1_0i45s")
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_a3puv")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="Menu"]
+material = SubResource("CanvasItemMaterial_qqu3e")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.294118, 0.317647)
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 256
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Settings" type="TabContainer" parent="Menu/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/side_margin = 0
+theme_override_constants/outline_size = 1
+
+[node name="Game" type="MarginContainer" parent="Menu/MarginContainer/VBoxContainer/Settings"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 15
+
+[node name="GameGrid" type="GridContainer" parent="Menu/MarginContainer/VBoxContainer/Settings/Game"]
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "Field of view"
+theme_override_constants/h_separation = 15
+columns = 2
+
+[node name="CrosshairLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid"]
+layout_mode = 2
+text = "Crosshair
+"
+
+[node name="CrosshairToggle" type="CheckButton" parent="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid"]
+layout_mode = 2
+size_flags_horizontal = 8
+button_pressed = true
+
+[node name="HeadBobLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid"]
+layout_mode = 2
+text = "Head Bob
+"
+
+[node name="HeadBobToggle" type="CheckButton" parent="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid"]
+layout_mode = 2
+size_flags_horizontal = 8
+button_pressed = true
+
+[node name="FOVLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "FOV
+"
+
+[node name="FOVSlider" type="HSlider" parent="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+tooltip_text = "Field of view"
+min_value = 65.0
+max_value = 110.0
+value = 75.0
+
+[node name="Audio" type="MarginContainer" parent="Menu/MarginContainer/VBoxContainer/Settings"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="AudioGrid" type="GridContainer" parent="Menu/MarginContainer/VBoxContainer/Settings/Audio"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/h_separation = 15
+columns = 2
+
+[node name="MasterLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid"]
+layout_mode = 2
+text = "Master
+"
+
+[node name="MasterSlider" type="HSlider" parent="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.025
+value = 1.0
+
+[node name="MusicLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid"]
+layout_mode = 2
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.025
+value = 1.0
+
+[node name="AnnouncementLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid"]
+layout_mode = 2
+text = "Announcements"
+
+[node name="AnnouncementSlider" type="HSlider" parent="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.025
+value = 1.0
+
+[node name="SFXLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid"]
+layout_mode = 2
+text = "Sound Effects"
+
+[node name="SFXSlider" type="HSlider" parent="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.025
+value = 1.0
+
+[node name="Back" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+text = "Back"
+
+[node name="SplitContainer" type="SplitContainer" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical = true
+
+[node name="GameTitle" type="Label" parent="Menu/MarginContainer/VBoxContainer/SplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0.839216, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_xkn12")
+theme_override_font_sizes/font_size = 60
+text = "ProGame"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Main" type="GridContainer" parent="Menu/MarginContainer/VBoxContainer/SplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/v_separation = 10
+
+[node name="Start" type="Button" parent="Menu/MarginContainer/VBoxContainer/SplitContainer/Main"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Start"
+
+[node name="Settings" type="Button" parent="Menu/MarginContainer/VBoxContainer/SplitContainer/Main"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Settings"
+
+[node name="Exit" type="Button" parent="Menu/MarginContainer/VBoxContainer/SplitContainer/Main"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Exit"
+
+[node name="PlayerHUD" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Crosshair" type="TextureRect" parent="PlayerHUD"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.0
+offset_top = -318.0
+offset_right = 318.0
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("3_wjjro")
+expand_mode = 1
+
+[node name="Announcement" type="Label" parent="PlayerHUD" groups=["Announcement"]]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_top = 150.0
+offset_right = 125.0
+offset_bottom = 185.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0.839216, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_xkn12")
+theme_override_font_sizes/font_size = 12
+text = "Text"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_p4uto")
+metadata/_edit_use_anchors_ = true
+
+[node name="VisitGrid" type="GridContainer" parent="PlayerHUD"]
+layout_mode = 1
+offset_left = 10.0
+offset_right = 122.0
+offset_bottom = 42.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 2
+
+[node name="VisitLabel" type="Label" parent="PlayerHUD/VisitGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0.839216, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_xkn12")
+theme_override_font_sizes/font_size = 15
+text = "Visit "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VisitCount" type="Label" parent="PlayerHUD/VisitGrid" groups=["UsesScore"]]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.839216, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_xkn12")
+theme_override_font_sizes/font_size = 15
+text = "Null"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_61sup")
+metadata/_edit_use_anchors_ = true
+
+[node name="InteractPrompt" type="Label" parent="PlayerHUD"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = 40.0
+offset_right = 147.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.839216, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_xkn12")
+theme_override_font_sizes/font_size = 9
+text = "Press [F]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WorldTimer" parent="PlayerHUD" instance=ExtResource("7_3q4tp")]
+layout_mode = 1
+
+[node name="GameOver" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="GameOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_a3puv")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+material = SubResource("CanvasItemMaterial_qqu3e")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.294118, 0.317647)
+
+[node name="MarginContainer" type="MarginContainer" parent="GameOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="GridContainer" type="GridContainer" parent="GameOver/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="GameOverLabel" type="Label" parent="GameOver/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0.839216, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_xkn12")
+theme_override_font_sizes/font_size = 35
+text = "GAME OVER"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOverPrompt" type="Label" parent="GameOver/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0.839216, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_xkn12")
+theme_override_font_sizes/font_size = 24
+text = "press any key to restart"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VisitGrid" type="GridContainer" parent="GameOver/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/h_separation = 30
+columns = 2
+
+[node name="VisitLabel" type="Label" parent="GameOver/MarginContainer/VisitGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0.839216, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_xkn12")
+theme_override_font_sizes/font_size = 15
+text = "Total Visits Survived:"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VisitCount" type="Label" parent="GameOver/MarginContainer/VisitGrid" groups=["UsesScore"]]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.839216, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_xkn12")
+theme_override_font_sizes/font_size = 40
+text = "Null"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_61sup")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="toggled" from="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid/CrosshairToggle" to="." method="_on_crosshair_toggled"]
+[connection signal="toggled" from="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid/HeadBobToggle" to="." method="_on_head_bob_toggled"]
+[connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid/FOVSlider" to="." method="on_fov_slider_change"]
+[connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid/MasterSlider" to="." method="on_master_slider_change"]
+[connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid/MusicSlider" to="." method="on_music_slider_change"]
+[connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid/AnnouncementSlider" to="." method="on_announcement_slider_change"]
+[connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid/SFXSlider" to="." method="on_sfx_slider_change"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Back" to="." method="on_back_button_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/SplitContainer/Main/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/SplitContainer/Main/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/SplitContainer/Main/Exit" to="." method="_on_exit_pressed"]
+[connection signal="gui_input" from="GameOver" to="." method="_on_game_over_input"]

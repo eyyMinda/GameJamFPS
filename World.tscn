@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://pqaqso0g0r4c" path="res://Ships/ShipChanger.tscn" id="1_6s6e0"]
 [ext_resource type="Shader" path="res://Shaders/Retro.gdshader" id="1_g65iw"]
 [ext_resource type="PackedScene" uid="uid://c7e6gpourd3rk" path="res://Scenes/MainCharacter.tscn" id="2_74eqd"]
-[ext_resource type="AudioStream" uid="uid://cxj5u6tg7cpcr" path="res://Audio/Music/creepy music 3.wav" id="3_nxix7"]
 [ext_resource type="Script" path="res://Scripts/NavMeshUpdate.gd" id="6_h0oym"]
 [ext_resource type="PackedScene" uid="uid://dcqet8dydslqq" path="res://Scenes/Door.tscn" id="7_2redl"]
 [ext_resource type="PackedScene" uid="uid://bxuduxsik8n88" path="res://Scenes/Entities/Enemy.tscn" id="7_lufdt"]
 [ext_resource type="PackedScene" uid="uid://1wkmvuasmfa8" path="res://Scenes/GameManager.tscn" id="7_wuo8q"]
 [ext_resource type="PackedScene" uid="uid://c8khpbnsk7sc5" path="res://Scenes/NPCCharacter.tscn" id="9_auwdl"]
 [ext_resource type="PackedScene" uid="uid://dc52chkmcmec0" path="res://Scenes/Audio_manager.tscn" id="10_5nbrt"]
+[ext_resource type="PackedScene" uid="uid://cr5iqey23jc7p" path="res://Scenes/UI/UI.tscn" id="11_5hbnm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_spqti"]
 shader = ExtResource("1_g65iw")
@@ -88,7 +88,7 @@ offset_bottom = 40.0
 handle_input_locally = false
 audio_listener_enable_2d = true
 audio_listener_enable_3d = true
-size = Vector2i(320, 180)
+size = Vector2i(1280, 720)
 render_target_update_mode = 4
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
@@ -118,11 +118,6 @@ light_volumetric_fog_energy = 4.0
 light_size = 1.0
 shadow_enabled = true
 
-[node name="Music" type="AudioStreamPlayer" parent="SubViewportContainer/SubViewport"]
-stream = ExtResource("3_nxix7")
-volume_db = -9.608
-autoplay = true
-
 [node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("7_2redl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29687, -2.14619e-07, 0.0169591)
 
@@ -141,4 +136,6 @@ transform = Transform3D(81.443, 0, -182.666, 0, 200, 0, 182.666, 0, 81.443, 3.74
 [node name="NpcCharacter2" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_auwdl")]
 transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 0.714769, 0, -4.79435)
 
-[node name="AudioManager" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_5nbrt")]
+[node name="UI" parent="." instance=ExtResource("11_5hbnm")]
+
+[node name="AudioManager" parent="." instance=ExtResource("10_5nbrt")]
