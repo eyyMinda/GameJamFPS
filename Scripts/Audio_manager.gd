@@ -9,7 +9,7 @@ var sound_types = {
 }
 
 func _ready():
-	music_player = $MusicPlayer
+	music_player = %MusicPlayer
 
 func play_sound(stream, sound_type = "sfx", parent = self, pitchscale = 1.0, volume = 0.0):
 	var audio_player = find_audio_stream_player(parent, stream)
