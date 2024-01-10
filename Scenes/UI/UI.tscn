@@ -60,6 +60,7 @@ alignment = 1
 
 [node name="Settings" type="TabContainer" parent="Menu/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/side_margin = 0
@@ -185,26 +186,46 @@ layout_mode = 2
 size_flags_vertical = 4
 text = "Back"
 
-[node name="Main" type="GridContainer" parent="Menu/MarginContainer/VBoxContainer"]
+[node name="SplitContainer" type="SplitContainer" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical = true
+
+[node name="GameTitle" type="Label" parent="Menu/MarginContainer/VBoxContainer/SplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0.839216, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_xkn12")
+theme_override_font_sizes/font_size = 60
+text = "ProGame"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Main" type="GridContainer" parent="Menu/MarginContainer/VBoxContainer/SplitContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
 theme_override_constants/v_separation = 10
 
-[node name="Start" type="Button" parent="Menu/MarginContainer/VBoxContainer/Main"]
+[node name="Start" type="Button" parent="Menu/MarginContainer/VBoxContainer/SplitContainer/Main"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "Start"
 
-[node name="Settings" type="Button" parent="Menu/MarginContainer/VBoxContainer/Main"]
+[node name="Settings" type="Button" parent="Menu/MarginContainer/VBoxContainer/SplitContainer/Main"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Settings"
 
-[node name="Exit" type="Button" parent="Menu/MarginContainer/VBoxContainer/Main"]
+[node name="Exit" type="Button" parent="Menu/MarginContainer/VBoxContainer/SplitContainer/Main"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Exit"
@@ -460,7 +481,7 @@ metadata/_edit_use_anchors_ = true
 [connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid/AnnouncementSlider" to="." method="on_announcement_slider_change"]
 [connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid/SFXSlider" to="." method="on_sfx_slider_change"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Back" to="." method="on_back_button_pressed"]
-[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Main/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Main/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Main/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/SplitContainer/Main/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/SplitContainer/Main/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/SplitContainer/Main/Exit" to="." method="_on_exit_pressed"]
 [connection signal="gui_input" from="GameOver" to="." method="_on_game_over_input"]

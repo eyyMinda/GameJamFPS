@@ -96,6 +96,5 @@ func _on_crosshair_toggled(toggled_on): crosshair.visible = toggled_on
 func set_interact_prompt(text):
 	interact_label.text = text
 
-
 # ============== Gameover HUD ====================
 func toggle_gameover(val): gameover.visible = val
