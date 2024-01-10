@@ -3,27 +3,27 @@ extends CharacterBody3D
 
 # Movement
 var speed: float; var acceleration: float;
-const MAX_SPEED_WALK: float = 3.5
-const MAX_SPEED_SPRINT: float = 5.5
-const ACCELERATION: float = 7.0
-const ACCELERATION_SPRINT: float = 10.0
-const DECELERATION: float = 3.0
-const JUMP_VELOCITY: float = 4.5
-const SENSITIVITY: float = 0.002
+const MAX_SPEED_WALK := 3.5
+const MAX_SPEED_SPRINT := 5.5
+const ACCELERATION := 7.0
+const ACCELERATION_SPRINT := 10.0
+const DECELERATION := 2.0
+const JUMP_VELOCITY := 4.5
+const SENSITIVITY := 0.002
 
 # Camera
-const MAX_LOOK_DOWN: float = -75
-const MAX_LOOK_UP: float = 100
+const MAX_LOOK_DOWN := -75.0
+const MAX_LOOK_UP := 100.0
 
 # Head bob
-const BOB_FREQ: float = 3.0
-var bob_amp: float = 0.06 # Default 0.06
+const BOB_FREQ := 3.0
+var bob_amp := 0.06 # Default 0.06
 
-var t_bob: float = 0.0
+var t_bob := 0.0
 
 # FOV
-var base_fov: float = 75.0
-const FOV_CHANGE: float = 1.5 # ratio of FOV change during movement based on speed
+var base_fov := 75.0
+const FOV_CHANGE := 1.5 # ratio of FOV change during movement based on speed
 
 # Footsteps
 var can_play: bool = true

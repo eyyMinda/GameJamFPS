@@ -10,3 +10,11 @@ res://Scenes/NPCCharacter.tscn
 res://Scripts/Player.gd
 res://default_bus_layout.tres
 res://Scenes/UI/UI.gd
+res://Scripts/Timer.gd
+res://Scenes/Audio_manager.tscn
+res://Scripts/Audio_manager.gd
+res://Scenes/UI/GameOverHud.tscn
+res://Scenes/GameManager.tscn
+res://Scripts/GameManagerState.gd
+res://Scripts/UpdateVisitCount.gd
+res://Scripts/NPC.gd

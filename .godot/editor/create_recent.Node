@@ -1,9 +1,10 @@
-CheckButton
-Control
-Container
-MarginContainer
 GridContainer
+GridMap
 Label
+MarginContainer
+Control
+CheckButton
+Container
 TextureRect
 ItemList
 Button
@@ -11,5 +12,3 @@ CenterContainer
 TabContainer
 AudioStreamPlayer
 HSlider
-VBoxContainer
-ColorRect

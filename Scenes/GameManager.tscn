@@ -1,8 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://1wkmvuasmfa8"]
+[gd_scene load_steps=2 format=3 uid="uid://1wkmvuasmfa8"]
 
 [ext_resource type="Script" path="res://Scripts/GameManagerState.gd" id="1_a7q5g"]
-[ext_resource type="PackedScene" uid="uid://drg1u58oikan2" path="res://Scenes/UI/GameOverHud.tscn" id="2_7vydq"]
 
 [node name="GameManager" type="Node" groups=["GameState"]]
 script = ExtResource("1_a7q5g")
-game_over_hud_scene = ExtResource("2_7vydq")

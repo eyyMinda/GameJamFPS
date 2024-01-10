@@ -79,12 +79,22 @@ tooltip_text = "Field of view"
 theme_override_constants/h_separation = 15
 columns = 2
 
+[node name="CrosshairLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid"]
+layout_mode = 2
+text = "Crosshair
+"
+
+[node name="CrosshairToggle" type="CheckButton" parent="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid"]
+layout_mode = 2
+size_flags_horizontal = 8
+button_pressed = true
+
 [node name="HeadBobLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid"]
 layout_mode = 2
 text = "Head Bob
 "
 
-[node name="HeadBob" type="CheckButton" parent="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid"]
+[node name="HeadBobToggle" type="CheckButton" parent="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid"]
 layout_mode = 2
 size_flags_horizontal = 8
 button_pressed = true
@@ -209,7 +219,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Cursor" type="TextureRect" parent="PlayerHUD"]
+[node name="Crosshair" type="TextureRect" parent="PlayerHUD"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -324,7 +335,125 @@ vertical_alignment = 1
 [node name="WorldTimer" parent="PlayerHUD" instance=ExtResource("7_3q4tp")]
 layout_mode = 1
 
-[connection signal="toggled" from="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid/HeadBob" to="." method="_on_head_bob_toggled"]
+[node name="GameOver" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="GameOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_a3puv")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+material = SubResource("CanvasItemMaterial_qqu3e")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.294118, 0.317647)
+
+[node name="MarginContainer" type="MarginContainer" parent="GameOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="GridContainer" type="GridContainer" parent="GameOver/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="GameOverLabel" type="Label" parent="GameOver/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0.839216, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_xkn12")
+theme_override_font_sizes/font_size = 35
+text = "GAME OVER"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOverPrompt" type="Label" parent="GameOver/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0.839216, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_xkn12")
+theme_override_font_sizes/font_size = 24
+text = "press any key to restart"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VisitGrid" type="GridContainer" parent="GameOver/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/h_separation = 30
+columns = 2
+
+[node name="VisitLabel" type="Label" parent="GameOver/MarginContainer/VisitGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0.839216, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_xkn12")
+theme_override_font_sizes/font_size = 15
+text = "Total Visits Survived:"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VisitCount" type="Label" parent="GameOver/MarginContainer/VisitGrid" groups=["UsesScore"]]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.839216, 0.952941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_xkn12")
+theme_override_font_sizes/font_size = 40
+text = "Null"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_61sup")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="toggled" from="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid/CrosshairToggle" to="." method="_on_crosshair_toggled"]
+[connection signal="toggled" from="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid/HeadBobToggle" to="." method="_on_head_bob_toggled"]
 [connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid/FOVSlider" to="." method="on_fov_slider_change"]
 [connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid/MasterSlider" to="." method="on_master_slider_change"]
 [connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/Settings/Audio/AudioGrid/MusicSlider" to="." method="on_music_slider_change"]
@@ -334,3 +463,4 @@ layout_mode = 1
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Main/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Main/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Main/Exit" to="." method="_on_exit_pressed"]
+[connection signal="gui_input" from="GameOver" to="." method="_on_game_over_input"]

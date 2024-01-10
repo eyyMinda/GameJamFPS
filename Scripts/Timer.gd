@@ -6,10 +6,10 @@ var currentState = TimerState.HOME
 var seconds = 0
 var minutes = 0
 
-var homeSeconds = 2
+var homeSeconds = 5
 var homeMinutes = 0
 
-var visitSeconds = 30
+var visitSeconds = 3
 var visitMinutes = 0
 
 @export var tick_sound: AudioStreamWAV
@@ -18,9 +18,8 @@ var visitAdded = false
 var escapedToHome = true; # replace with 'player location in home ship?' boolean
 
 func _ready():
-	reset_timer()
-	start()
-	
+	get_tree().call_group("AirlockDoor", "lock_airlock")	
+
 func _process(_delta):
 	if seconds < 0 and minutes <= 0:
 		if currentState != TimerState.GAME_OVER:
@@ -41,6 +40,7 @@ func _process(_delta):
 		get_tree().call_group("DockedModel", "change_model")
 	elif not (seconds == visitSeconds and minutes == visitMinutes):
 		visitAdded = false
+
 
 func _on_timeout():
 	if currentState != TimerState.GAME_OVER:
@@ -69,6 +69,7 @@ func reset_timer():
 		minutes = visitMinutes
 		seconds = visitSeconds
 	update_timer_label()
+	start()
 
 func switch_to_state(newState):
 	currentState = newState

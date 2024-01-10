@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var music_player: AudioStreamPlayer
+@onready var music_player := %MusicPlayer
 
 var sound_types = {
 	"music": Callable(AudioStreamPlayer2D, "new"),
@@ -8,8 +8,7 @@ var sound_types = {
 	"sfx": Callable(AudioStreamPlayer3D, "new")
 }
 
-func _ready():
-	music_player = %MusicPlayer
+func _ready(): pass
 
 func play_sound(stream, sound_type = "sfx", parent = self, pitchscale = 1.0, volume = 0.0):
 	var audio_player = find_audio_stream_player(parent, stream)

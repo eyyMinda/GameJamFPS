@@ -9,11 +9,14 @@ extends CanvasLayer
 @onready var start_btn = %Start
 
 @onready var player_hud = $PlayerHUD
+@onready var crosshair = %Crosshair
 @onready var interact_label = %InteractPrompt
 
 @onready var player = get_tree().get_first_node_in_group("Player")
 @onready var fov_label = %FOVLabel
 @onready var fov_slider = %FOVSlider
+
+@onready var gameover = $GameOver
 
 @onready var bus_ids = {
 	"master": AudioServer.get_bus_index("Master"),
@@ -25,7 +28,9 @@ extends CanvasLayer
 func _ready():
 	set_interact_prompt("")
 	menu_reset()
+	menu.visible = true
 	player_hud.visible = false
+	gameover.visible = false
 
 # ============== Menu Navigation ====================
 func _input(event):
@@ -40,6 +45,8 @@ func _input(event):
 func _on_start_pressed():
 	menu.visible = false
 	player_hud.visible = true
+	if start_btn.text == "Start":
+		get_tree().call_group("GameState", "start_game")
 
 func _on_settings_pressed():
 	toggle_menu_panel("settings", "back")
@@ -82,11 +89,13 @@ func on_fov_slider_change(value):
 	fov_label.text = "FOV " + str(value)
 	player.change_fov(value)
 
-func _on_head_bob_toggled(toggled_on):
-	player.toggle_headbob(toggled_on)
+func _on_head_bob_toggled(toggled_on): player.toggle_headbob(toggled_on)
+func _on_crosshair_toggled(toggled_on): crosshair.visible = toggled_on
 
 # ============== Interact Prompt ====================
 func set_interact_prompt(text):
 	interact_label.text = text
 
 
+# ============== Gameover HUD ====================
+func toggle_gameover(val): gameover.visible = val
