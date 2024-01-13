@@ -1,29 +1,30 @@
 class_name Player
 extends CharacterBody3D
 
-# Movement
+@export_category("Movement")
+@export var MAX_SPEED_WALK := 3.5
+@export var MAX_SPEED_SPRINT := 5.5
+@export var ACCELERATION := 7.0
+@export var ACCELERATION_SPRINT := 10.0
+@export var DECELERATION := 2.0
+@export var JUMP_VELOCITY := 4.5
 var speed: float; var acceleration: float;
-const MAX_SPEED_WALK := 3.5
-const MAX_SPEED_SPRINT := 5.5
-const ACCELERATION := 7.0
-const ACCELERATION_SPRINT := 10.0
-const DECELERATION := 2.0
-const JUMP_VELOCITY := 4.5
-const SENSITIVITY := 0.002
 
-# Camera
-const MAX_LOOK_DOWN := -75.0
-const MAX_LOOK_UP := 100.0
+@export_category("Camera")
+@export var SENSITIVITY := 0.002
+@export var MAX_LOOK_DOWN := -75.0
+@export var MAX_LOOK_UP := 100.0
 
-# Head bob
-const BOB_FREQ := 3.0
-var bob_amp := 0.06 # Default 0.06
-
+@export_category("Head Bob")
+@export var BOB_FREQ := 3.0
+@export var BOB_AMP_DEFAULT := 0.06
+const BOB_AMP_DISABLED := 0.01
+var bob_amp = BOB_AMP_DEFAULT
 var t_bob := 0.0
 
-# FOV
-var base_fov := 75.0
-const FOV_CHANGE := 1.5 # ratio of FOV change during movement based on speed
+@export_category("FOV")
+@export var base_fov := 75.0
+@export var FOV_CHANGE := 1.5 # ratio of FOV change during movement based on speed
 
 # Footsteps
 var can_play: bool = true
@@ -114,7 +115,7 @@ func _headbob(time) -> Vector3:
 
 # Player Settings
 func change_fov(value): base_fov = value
-func toggle_headbob(val): bob_amp = 0.06 if val else 0.01
+func toggle_headbob(val): bob_amp = BOB_AMP_DEFAULT if val else BOB_AMP_DISABLED
 
 
 func ResetLocation():

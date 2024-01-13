@@ -1,9 +1,9 @@
 extends CharacterBody3D 
 
-# Enemy stats
-const SPEED = 3.4
-const ATTACK_RANGE = 1.5
-const DETECT_RANGE = 8
+@export_category("Stats")
+@export var SPEED := 3.4
+@export var ATTACK_RANGE := 1.5
+@export var DETECT_RANGE := 8.0
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var anim_tree: AnimationTree = $AnimationTree
@@ -71,3 +71,8 @@ func _enemy_attack():
 		pass
 	pass
 
+
+
+func _on_enemy_interacted(body):
+	print("interacted: ", body)
+	pass # Replace with function body.

@@ -1,6 +1,5 @@
 extends Node3D
 
-var ship_loaded
 var ship_instance
 
 @export var PossibleShipModels: Array[PackedScene]
