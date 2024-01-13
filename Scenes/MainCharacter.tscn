@@ -31,7 +31,7 @@ mesh = SubResource("CapsuleMesh_ipunq")
 shape = SubResource("ConvexPolygonShape3D_c7mc5")
 
 [node name="NeckPivot" type="Node3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0.64, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/NeckPivot"]
 fov = 90.0
@@ -43,6 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233547, -0.0952243, -0.2306
 [node name="InteractRay" type="RayCast3D" parent="CharacterBody3D/NeckPivot/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000392418, -0.00461447, 0.153047)
 target_position = Vector3(0, 0, -4)
+collision_mask = 6
 script = ExtResource("3_p85ax")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="CharacterBody3D/NeckPivot/Camera3D"]
@@ -58,9 +59,10 @@ spot_range = 15.0
 spot_attenuation = 0.466517
 
 [node name="AimCast" type="RayCast3D" parent="CharacterBody3D/NeckPivot/Camera3D"]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 0, -0.676587)
+unique_name_in_owner = true
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
 target_position = Vector3(0, -500, 0)
-collision_mask = 65534
+collision_mask = 65535
 hit_from_inside = true
 collide_with_areas = true
 script = ExtResource("4_n7d3a")

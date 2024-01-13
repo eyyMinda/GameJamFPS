@@ -8,3 +8,15 @@ res://Scenes/UI/UI.tscn
 res://Scenes/GameManager.tscn
 res://Scenes/WorldTimer.tscn
 res://Scenes/Audio_manager.tscn
+res://Scripts/interactRay.gd
+res://Scenes/Door.tscn
+res://Scripts/Interactable.gd
+res://Scripts/NPC.gd
+res://Ships/ShipChanger.tscn
+res://Scripts/Door.gd
+res://Scripts/CheckIfHome.gd
+res://Scripts/Enemy.gd
+res://Scripts/NavMeshUpdate.gd
+res://Scripts/Guns/Rifle.gd
+res://Scripts/Audio_manager.gd
+res://Scripts/HitscanShoot.gd
