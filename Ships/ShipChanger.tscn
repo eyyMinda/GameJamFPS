@@ -14,11 +14,199 @@ PossibleShipModels = Array[PackedScene]([ExtResource("2_3728w"), ExtResource("3_
 [node name="MainShip" parent="." instance=ExtResource("1_grrna")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00661945, 0, -0.00784767)
 
+[node name="StaticBody3D" parent="MainShip/RootNode/MainShip" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_001" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_002" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_003" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_004" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_005" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_006" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_007" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_008" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_009" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_018" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_010" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_011" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_012" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_013" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_014" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_015" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_016" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_017" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_019" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop" index="0"]
+collision_layer = 3
+collision_mask = 3
+
 [node name="prop_020" parent="MainShip/RootNode" index="24"]
 layers = 3
 
 [node name="StaticBody3D" parent="MainShip/RootNode/prop_020" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, -1.42109e-14, 0, 1.42109e-14, 1, 0, 0, 0)
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_021" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_022" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_023" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_024" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_025" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_026" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_027" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_028" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_029" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_030" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_031" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_032" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_033" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_034" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_035" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_036" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_037" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_038" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_039" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_040" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_001_001" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_002_001" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_009_001" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_035_001" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_036_001" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="StaticBody3D" parent="MainShip/RootNode/prop_037_001" index="0"]
 collision_layer = 3
 collision_mask = 3
 

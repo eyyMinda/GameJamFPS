@@ -26,6 +26,7 @@ size = Vector3(0.04, 0.04, 0.04)
 
 [node name="Bullet" type="Node3D"]
 script = ExtResource("1_0iwku")
+speed = 70.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 1, 0, 0, 0)
