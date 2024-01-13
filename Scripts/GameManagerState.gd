@@ -21,11 +21,12 @@ func game_over():
 	get_tree().call_group("UI", "toggle_gameover", true)
 
 func _input(event):
-	if is_game_over and event is InputEventKey:
-		is_game_over = false
-		start_game()
-		print("Restart")
-		get_tree().call_group("UI", "toggle_gameover", false)
+	if is_game_over:
+		if event is InputEventKey or event is InputEventMouseButton:
+			is_game_over = false
+			start_game()
+			print("Restart")
+			get_tree().call_group("UI", "toggle_gameover", false)
 
 # Function to restart the game
 func start_game():

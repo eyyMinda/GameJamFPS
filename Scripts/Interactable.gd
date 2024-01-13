@@ -1,10 +1,12 @@
-extends StaticBody3D
+extends PhysicsBody3D
 class_name Interactable
 
 signal interacted(body)
 
+@export_category("Hover Prompt Info")
 @export var prompt_message = "Interact"
 @export var prompt_action = "interact"
+# NOTE: Must set the collision layer/mask to 3
 
 func get_prompt():
 	var key_name = ""

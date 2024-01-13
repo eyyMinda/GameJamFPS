@@ -60,7 +60,6 @@ alignment = 1
 
 [node name="Settings" type="TabContainer" parent="Menu/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/side_margin = 0
@@ -79,6 +78,20 @@ size_flags_vertical = 4
 tooltip_text = "Field of view"
 theme_override_constants/h_separation = 15
 columns = 2
+
+[node name="SensitivityLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid"]
+layout_mode = 2
+text = "Sensitivity"
+
+[node name="SensitivitySlider" type="HSlider" parent="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+tooltip_text = "Mouse sensitivity"
+max_value = 5.0
+step = 0.01
+value = 1.5
 
 [node name="CrosshairLabel" type="Label" parent="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid"]
 layout_mode = 2
@@ -357,7 +370,6 @@ vertical_alignment = 1
 layout_mode = 1
 
 [node name="GameOver" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -473,6 +485,7 @@ vertical_alignment = 1
 script = ExtResource("6_61sup")
 metadata/_edit_use_anchors_ = true
 
+[connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid/SensitivitySlider" to="." method="on_sensitivity_slider_change"]
 [connection signal="toggled" from="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid/CrosshairToggle" to="." method="_on_crosshair_toggled"]
 [connection signal="toggled" from="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid/HeadBobToggle" to="." method="_on_head_bob_toggled"]
 [connection signal="value_changed" from="Menu/MarginContainer/VBoxContainer/Settings/Game/GameGrid/FOVSlider" to="." method="on_fov_slider_change"]

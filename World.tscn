@@ -4,7 +4,7 @@
 [ext_resource type="Shader" path="res://Shaders/Retro.gdshader" id="1_g65iw"]
 [ext_resource type="PackedScene" uid="uid://c7e6gpourd3rk" path="res://Scenes/MainCharacter.tscn" id="2_74eqd"]
 [ext_resource type="Script" path="res://Scripts/NavMeshUpdate.gd" id="6_h0oym"]
-[ext_resource type="PackedScene" uid="uid://dcqet8dydslqq" path="res://Scenes/Door.tscn" id="7_2redl"]
+[ext_resource type="PackedScene" uid="uid://dq5ucoaca3254" path="res://Scenes/Door.tscn" id="7_2redl"]
 [ext_resource type="PackedScene" uid="uid://bxuduxsik8n88" path="res://Scenes/Entities/Enemy.tscn" id="7_lufdt"]
 [ext_resource type="PackedScene" uid="uid://1wkmvuasmfa8" path="res://Scenes/GameManager.tscn" id="7_wuo8q"]
 [ext_resource type="PackedScene" uid="uid://c8khpbnsk7sc5" path="res://Scenes/NPCCharacter.tscn" id="9_auwdl"]
@@ -118,9 +118,6 @@ light_volumetric_fog_energy = 4.0
 light_size = 1.0
 shadow_enabled = true
 
-[node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("7_2redl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29687, -2.14619e-07, 0.0169591)
-
 [node name="GameManager" parent="SubViewportContainer/SubViewport" instance=ExtResource("7_wuo8q")]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/SubViewport" groups=["Nav"]]
@@ -131,10 +128,13 @@ Enemy = ExtResource("7_lufdt")
 [node name="ShipChanger" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("1_6s6e0")]
 
 [node name="NpcCharacter" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_auwdl")]
-transform = Transform3D(81.443, 0, -182.666, 0, 200, 0, 182.666, 0, 81.443, 3.74961, 0.0958253, 0)
+transform = Transform3D(73.2989, 0, -164.4, 0, 180, 0, 164.4, 0, 73.2989, 3.74961, 0.0958253, 0)
 
 [node name="NpcCharacter2" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_auwdl")]
 transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 0.714769, 0, -4.79435)
+
+[node name="Airlock" parent="SubViewportContainer/SubViewport" instance=ExtResource("7_2redl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3, 0, 0)
 
 [node name="UI" parent="." instance=ExtResource("11_5hbnm")]
 

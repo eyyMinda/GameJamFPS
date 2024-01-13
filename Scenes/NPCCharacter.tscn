@@ -447,6 +447,9 @@ skin = SubResource("Skin_sxayk")
 
 [node name="Player" type="StaticBody3D" parent="Armature/Skeleton3D/Cube"]
 transform = Transform3D(1, 0, 0, 0, 1, -1.06581e-14, 0, 1.42109e-14, 1, 0, 0, 0)
+disable_mode = 2
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("2_duewk")
 prompt_message = "Spaceboy"
 
@@ -542,7 +545,7 @@ transform = Transform3D(0.0011221, -5.44652e-12, -6.64313e-11, 2.93278e-11, 0.00
 shape = SubResource("CapsuleShape3D_51ghy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -1.94707e-07, 1, 0, -1, -1.94707e-07, 0, 1.78575, -2.80288e-07)
+transform = Transform3D(1, 0, 0, 0, -1.94707e-07, 1, 0, -1, -1.94707e-07, 0, 0.00401114, 0)
 shape = SubResource("BoxShape3D_wd6fo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

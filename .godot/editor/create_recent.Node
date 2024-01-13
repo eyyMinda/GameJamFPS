@@ -1,3 +1,5 @@
+StaticBody3D
+CollisionShape3D
 Label
 SplitContainer
 MenuButton
@@ -11,4 +13,3 @@ TextureRect
 ItemList
 Button
 CenterContainer
-TabContainer

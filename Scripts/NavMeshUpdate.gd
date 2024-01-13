@@ -34,5 +34,6 @@ func generate_random_point_within_bounds():
 # function to spawn an enemy
 func spawn_enemy_at(pos):
 	var enemy = Enemy.instantiate()
-	enemy.global_transform.origin = pos
+	enemy.name = "Monster"
+	enemy.transform.origin = pos
 	add_child(enemy)

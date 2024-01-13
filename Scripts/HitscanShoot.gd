@@ -6,7 +6,8 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("shoot"):
-		var col_point = get_collision_point()
+		var col_point = null
+		if is_colliding(): col_point = get_collision_point()
 		startShooting(col_point)
 
 func startShooting(col_point):

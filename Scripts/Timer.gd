@@ -6,11 +6,11 @@ var currentState = TimerState.HOME
 var seconds = 0
 var minutes = 0
 
-var homeSeconds = 20
-var homeMinutes = 0
-
-var visitSeconds = 30
-var visitMinutes = 0
+@export_category("Intervals")
+@export var homeSeconds := 20
+@export var homeMinutes := 0
+@export var visitSeconds := 30
+@export var visitMinutes := 0
 
 @export var tick_sound: AudioStreamWAV
 
@@ -18,7 +18,7 @@ var visitAdded = false
 var escapedToHome = true; # replace with 'player location in home ship?' boolean
 
 func _ready():
-	get_tree().call_group("AirlockDoor", "lock_airlock")	
+	get_tree().call_group("AirlockDoor", "lock_airlock")
 
 func _process(_delta):
 	if seconds < 0 and minutes <= 0:
@@ -30,6 +30,7 @@ func _process(_delta):
 				get_tree().call_group("AirlockDoor", "lock_airlock")
 			else:
 				currentState = TimerState.GAME_OVER
+				#get_tree().reload_current_scene()
 				get_tree().call_group("AirlockDoor", "lock_airlock")
 				get_tree().call_group("GameState", "game_over")
 	elif seconds == visitSeconds and minutes == visitMinutes and not visitAdded:
