@@ -28,6 +28,7 @@ func playAnimSound():
 	AudioManager.play_sound(gun_sound, "sfx", gun_barrel, randf_range(.7, 1.5), -24.5)
 
 func spawnBullet(col_point):
+	print(col_point)
 	bullet_instance = bullet.instantiate()
 	bullet_instance.position = gun_barrel.global_position
 	bullet_instance.transform.basis = gun_barrel.global_transform.basis
