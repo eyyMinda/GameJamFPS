@@ -1,7 +1,5 @@
 extends Node3D
 
-@onready var music_player := %MusicPlayer
-
 var sound_types = {
 	"music": Callable(AudioStreamPlayer2D, "new"),
 	"announcement": Callable(AudioStreamPlayer2D, "new"),
@@ -33,4 +31,4 @@ func find_audio_stream_player(parent, stream):
 	return null
 
 func on_music_player_finished():
-	music_player.play()
+	$MusicPlayer.play()
