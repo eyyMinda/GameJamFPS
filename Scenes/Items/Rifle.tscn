@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce0ch5vrqo2t8"]
+[gd_scene load_steps=8 format=3 uid="uid://ce0ch5vrqo2t8"]
 
 [ext_resource type="Script" path="res://Scripts/Guns/Rifle.gd" id="1_5p177"]
 [ext_resource type="PackedScene" uid="uid://dchqbxjuanoif" path="res://Art/Weapon.fbx" id="2_gd1qa"]
 [ext_resource type="PackedScene" uid="uid://b8msh684y0s0" path="res://Scenes/Other/Bullet.tscn" id="3_jyuts"]
 [ext_resource type="AudioStream" uid="uid://bikstu5jbt7lo" path="res://Audio/Shoot.wav" id="3_mj6pj"]
+[ext_resource type="PackedScene" uid="uid://hskmhpag0or1" path="res://Scenes/Other/MuzzleFlash.tscn" id="5_xb03s"]
 
 [sub_resource type="Animation" id="Animation_u1d1w"]
 resource_name = "Shoot"
@@ -44,6 +45,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
 script = ExtResource("1_5p177")
 gun_sound = ExtResource("3_mj6pj")
 bullet = ExtResource("3_jyuts")
+muzzle_flash = ExtResource("5_xb03s")
 
 [node name="WeaponMesh" parent="." instance=ExtResource("2_gd1qa")]
 
@@ -55,3 +57,6 @@ libraries = {
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.043557, -0.281814)
 target_position = Vector3(0, 0, -1)
+
+[node name="MuzzleMarker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, -0.38)

@@ -3,10 +3,13 @@ extends Node3D
 @export var gun_frequency: float = .8
 @export var gun_sound: AudioStream
 @export var bullet: PackedScene
+@export var muzzle_flash: PackedScene
+
 
 @onready var gun_anim = $AnimationPlayer
 @onready var gun_barrel = $RayCast3D
 @onready var aim_cast = %AimCast
+@onready var muzzle_flash_marker = $MuzzleMarker3D
 
 var canShoot: bool = true
 var bullet_instance
@@ -30,11 +33,22 @@ func playAnimSound():
 func spawnBullet(col_point):
 	print(col_point)
 	bullet_instance = bullet.instantiate()
+	#var look_at_point: Vector3 = gun_barrel.global_position + \
+		#(-gun_barrel.global_transform.basis.z * 100);
 	bullet_instance.position = gun_barrel.global_position
 	bullet_instance.transform.basis = gun_barrel.global_transform.basis
 	bullet_instance.rotation += Vector3(0.02, 0.02, 0) # Slight adjustment to possibly match the cursor
-	get_tree().root.get_child(0).add_child(bullet_instance)
-
+	
+	#if aim_cast.is_colliding():
+		#var aim_col_point = aim_cast.get_collision_point()
+		#bullet_instance.max_distance = muzzle_flash_marker.global_position.distance_to(aim_col_point);
+		#look_at_point = aim_col_point;
+		#
+	#bullet_instance.look_at(look_at_point, Vector3.UP);
+	
+	get_tree().get_root().add_child(bullet_instance)
+	var muzzle_instance: MuzzleFlash = muzzle_flash.instantiate();
+	muzzle_flash_marker.add_child(muzzle_instance);
 
 # Aim Assist backup
 #func spawnBullet(col_point):
