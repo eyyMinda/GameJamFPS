@@ -1,3 +1,6 @@
+Marker3D
+GPUParticles3D
+Area3D
 StaticBody3D
 CollisionShape3D
 Label
@@ -10,6 +13,3 @@ Control
 CheckButton
 Container
 TextureRect
-ItemList
-Button
-CenterContainer
